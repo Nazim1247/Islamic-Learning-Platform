@@ -2,6 +2,7 @@ import { MongoClient, ServerApiVersion } from 'mongodb';
 
 export const collectionNameObj = {
     courseCollection: 'courses',
+    newsletterCollection: 'subscribe',
 }
 
 const uri = process.env.MONGODB_URI;
