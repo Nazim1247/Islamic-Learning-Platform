@@ -1,19 +1,18 @@
 import About from "@/components/About";
-import Footer from "@/components/Footer";
+import FeaturedCourses from "@/components/FeaturedCourses";
 import HeroSection from "@/components/HeroSection";
-import Navbar from "@/components/Navbar";
 
 
 export default function Home() {
   return (
     <div className="max-w-[1280px] mx-auto">
-      <Navbar />
+      
       <div className="min-h-40">
         <HeroSection />
         <About />
-        <h1>Home Page</h1>
+        <FeaturedCourses />
       </div>
-      <Footer />
+      
     </div>
   );
 }

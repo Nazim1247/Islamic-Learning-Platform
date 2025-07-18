@@ -22,6 +22,7 @@ const Navbar = () => {
         </li>
         <li><Link href={'/about'}>About</Link></li>
       <li><Link href={'/contact'}>Contact</Link></li>
+      <li><Link href={'/create-course'}>Create a Course</Link></li>
       </ul>
     </div>
     <a className="hidden md:flex font-bold text-xl">Islamic Learning Platform</a>
@@ -30,16 +31,18 @@ const Navbar = () => {
     <ul className="menu menu-horizontal px-1">
       <li><Link href={'/'}>Home</Link></li>
       <li>
-        <details>
-          <summary>Services</summary>
-          <ul className="p-2">
-            <li><Link href={'/classes'}>Classes</Link></li>
-            <li><Link href={'/courses'}>Courses</Link></li>
-          </ul>
-        </details>
+        <details className="dropdown dropdown-end">
+  <summary>Services</summary>
+  <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+    <li><Link href="/classes">Classes</Link></li>
+    <li><Link href="/courses">Courses</Link></li>
+  </ul>
+</details>
+
       </li>
       <li><Link href={'/about'}>About</Link></li>
       <li><Link href={'/contact'}>Contact</Link></li>
+      <li><Link href={'/create-course'}>Create a Course</Link></li>
     </ul>
   </div>
   <div className="navbar-end">

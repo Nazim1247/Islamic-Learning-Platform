@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mongodb": "^6.17.0",
     "next": "15.4.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1",
     "swiper": "^11.2.10"
   },
   "devDependencies": {
