@@ -9,7 +9,7 @@ const teachers = [
     name: "Mufti Abdullah Al-Madani",
     subject: "Hadith & Fiqh",
     bio: "Senior scholar with 15+ years teaching classical Hadith and Islamic jurisprudence.",
-    image: "/images/teachers/abdullah.jpg",
+    image: "/images/hadith-tafsir.jpeg",
   },
   {
     name: "Maulana Rafiq Hasan",

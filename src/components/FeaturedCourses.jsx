@@ -50,9 +50,10 @@ const FeaturedCourses = () => {
 
   return (
     <section className="py-8 px-4">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-8">
-        📚 Featured Courses
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-4">
+        Featured Courses
       </h2>
+      <p className="text-center text-gray-600 mb-8 max-w-4xl mx-auto">Explore our most popular and high-quality Islamic courses carefully selected to help you grow in knowledge and spirituality. Learn Qur’an, Hadith, Fiqh, Arabic, and more – all from experienced scholars.</p>
 
       <Slider {...settings}>
         {courses.map((course, index) => (
