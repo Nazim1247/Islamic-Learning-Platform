@@ -1,3 +1,4 @@
+import About from "@/components/About";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
@@ -9,6 +10,7 @@ export default function Home() {
       <Navbar />
       <div className="min-h-40">
         <HeroSection />
+        <About />
         <h1>Home Page</h1>
       </div>
       <Footer />
