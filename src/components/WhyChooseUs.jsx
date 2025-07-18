@@ -70,7 +70,7 @@ const WhyChooseUs = () => {
   return (
     <section className="py-8">
       <div className="px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-8">Why Choose Us?</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-4">Why Choose Us?</h2>
         <p className="text-gray-600 mb-8 px-4">
           Discover how our Islamic Learning Platform blends traditional scholarship with flexible online education to serve students around the world. With expert teachers, one-on-one support, and a wide range of courses — we aim to make authentic Islamic knowledge accessible, affordable, and deeply impactful for everyone.
         </p>
