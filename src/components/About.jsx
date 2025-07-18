@@ -37,11 +37,11 @@ const About = () => {
             </p>
           </div>
 
-          <div className='mt-4'>
-            <button className="bg-orange-500 text-white px-4 py-2 rounded-xl text-sm hover:bg-orange-600 transition">
-              Enroll Now
-            </button>
-          </div>
+          <div className="mt-6">
+          <button className="bg-orange-500 hover:bg-orange-600 text-white px-12 py-2 rounded-xl text-lg shadow-md animate-pulse">
+            Enroll Now
+          </button>
+        </div>
         </div>
       </section>
     </div>

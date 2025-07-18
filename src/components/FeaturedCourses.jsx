@@ -6,10 +6,11 @@ import Slider from "react-slick";
 const settings = {
   dots: true,
   infinite: true,
-  speed: 500,
+  speed: 10000,
   slidesToShow: 3,
   slidesToScroll: 1,
   autoplay: true,
+  autoplaySpeed: 1000,
   responsive: [
     { breakpoint: 1024, settings: { slidesToShow: 2 } },
     { breakpoint: 640, settings: { slidesToShow: 1 } },
@@ -48,7 +49,7 @@ const FeaturedCourses = () => {
   };
 
   return (
-    <section className="py-12 px-4">
+    <section className="py-8 px-4">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-8">
         📚 Featured Courses
       </h2>
@@ -75,7 +76,7 @@ const FeaturedCourses = () => {
 
   <button
     onClick={() => handleOpenModal(course)}
-    className="w-full mt-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition"
+    className="w-full mt-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition animate-pulse"
   >
     View Details
   </button>
@@ -128,7 +129,7 @@ const FeaturedCourses = () => {
         💰 Price: {selectedCourse.price}
       </p>
 
-      <button className="bg-orange-500 hover:bg-orange-600 text-white w-full py-2 rounded-xl transition">
+      <button className="bg-orange-500 hover:bg-orange-600 text-white w-full py-2 rounded-xl transition animate-pulse">
         Enroll Now
       </button>
     </div>
