@@ -52,14 +52,14 @@ const CreateCourseForm = () => {
     const data = await res.json();
 
     if (res.ok) {
-      alert("✅ Course Created Successfully!");
+      alert("Course Created Successfully!");
       console.log("Mongo Response:", data);
     } else {
-      alert("❌ Failed to Create Course");
+      alert("Failed to Create Course");
     }
   } catch (err) {
     console.error("Error submitting course:", err);
-    alert("❌ Something went wrong");
+    alert("Something went wrong");
   }
 
   // Reset Form

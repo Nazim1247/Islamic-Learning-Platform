@@ -12,6 +12,8 @@ const CreateClassForm = () => {
     days: [],
     location: "Online",
     notes: "",
+    admitFee: "",
+    monthlyFee: "",
   });
 
   const daysList = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
@@ -41,7 +43,7 @@ const CreateClassForm = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(classData),
     });
-// console.log(classData)
+
     const result = await response.json();
     if (result.success) {
       alert("Class created successfully!");
@@ -54,6 +56,8 @@ const CreateClassForm = () => {
         days: [],
         location: "Online",
         notes: "",
+        admitFee: "",
+        monthlyFee: "",
       });
     } else {
       alert("Error creating class.");
@@ -152,6 +156,22 @@ const CreateClassForm = () => {
         <option value="Offline">Offline</option>
       </select>
 
+      <input
+        type="number"
+        placeholder="Admit Fee"
+        className="input input-bordered w-full"
+        value={classData.admitFee}
+        onChange={(e) => setClassData({ ...classData, admitFee: e.target.value })}
+      />
+
+      <input
+        type="number"
+        placeholder="Monthly Fee"
+        className="input input-bordered w-full"
+        value={classData.monthlyFee}
+        onChange={(e) => setClassData({ ...classData, monthlyFee: e.target.value })}
+      />
+
       <textarea
         className="textarea textarea-bordered w-full"
         placeholder="Additional Notes (optional)"
@@ -160,7 +180,7 @@ const CreateClassForm = () => {
       ></textarea>
 
       <button type="submit" className="btn btn-primary w-full">
-         Create Class
+        Create Class
       </button>
     </form>
   );

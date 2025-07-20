@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 
@@ -24,11 +25,15 @@ const FeaturedCourses = () => {
   const modalRef = useRef(null);
 
   useEffect(() => {
-    fetch("/api/courses")
-      .then((res) => res.json())
-      .then((data) => setCourses(data))
-      .catch((err) => console.error(err));
-  }, []);
+  fetch("/api/courses")
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to fetch courses");
+      return res.json();
+    })
+    .then((data) => setCourses(data))
+    .catch((err) => console.error("Error loading courses:", err));
+}, []);
+
 
   const handleOpenModal = (course) => {
     setSelectedCourse(course);
@@ -56,13 +61,20 @@ const FeaturedCourses = () => {
       <p className="text-center text-gray-600 mb-8 max-w-4xl mx-auto">Explore our most popular and high-quality Islamic courses carefully selected to help you grow in knowledge and spirituality. Learn Qur’an, Hadith, Fiqh, Arabic, and more – all from experienced scholars.</p>
 
       <Slider {...settings}>
-        {courses.map((course, index) => (
-          <div key={index} className="p-3">
+        {courses.map((course) => (
+          <div key={course._id} className="p-3">
             <div className="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition-all space-y-2">
-  <img src={course.image} alt={course.title} className="rounded-lg h-40 w-full object-cover" />
-  
+  {course.image && (
+  <Image
+    src={course.image}
+    width={200}
+    height={200}
+    alt={course.title}
+    className="rounded-lg h-40 w-full object-cover"
+  />
+)}  
   <h3 className="text-xl font-bold text-gray-800">{course.title}</h3>
-  <p className="text-gray-600 text-sm">{course.description.slice(0, 80)}...</p>
+  <p className="text-gray-600 text-sm">{course.description}</p>
 
   <p className="text-sm text-gray-700"><span className="font-medium">Instructor:</span> {course.instructor}</p>
   <p className="text-sm text-gray-700"><span className="font-medium">Duration:</span> {course.duration}</p>
@@ -103,8 +115,9 @@ const FeaturedCourses = () => {
         &times;
       </button>
 
-      <img
+      <Image
         src={selectedCourse.image}
+        width={200} height={200}
         alt={selectedCourse.title}
         className="w-full h-56 object-cover rounded-xl mb-4"
       />

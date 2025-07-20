@@ -13,3 +13,15 @@ export const POST = async (req) => {
         console.error("Error creating class:", error);
     }
 }
+
+export async function GET() {
+  try {
+    const classCollection = dbConnect(collectionNameObj.classCollection);
+    const result = await classCollection.find().toArray();
+
+    return NextResponse.json({ success: true, data: result });
+  } catch (error) {
+    console.error("Error creating class:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}
