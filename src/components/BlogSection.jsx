@@ -6,7 +6,7 @@ const articles = [
     title: "Importance of Seeking Islamic Knowledge",
     description:
       "Seeking knowledge is an obligation upon every Muslim. Learn how it strengthens Imaan and benefits the Ummah.",
-    image: "/blog/knowledge.jpg",
+    image: "/images/hadith-tafsir.jpeg",
     link: "/blog/importance-of-seeking-knowledge",
   },
   {
@@ -14,7 +14,7 @@ const articles = [
     title: "Daily Sunnah Practices to Revive",
     description:
       "Discover forgotten Sunnahs that can bring immense rewards and blessings into your everyday life.",
-    image: "/blog/sunnah.jpg",
+    image: "/images/hadith-tafsir.jpeg",
     link: "/blog/daily-sunnah-practices",
   },
   {
@@ -22,7 +22,7 @@ const articles = [
     title: "Is Earning from Online Work Halal?",
     description:
       "A brief Islamic perspective on freelancing, YouTube, and online earnings in light of Shariah.",
-    image: "/blog/online-income.jpg",
+    image: "/images/hadith-tafsir.jpeg",
     link: "/blog/is-online-income-halal",
   },
 ];

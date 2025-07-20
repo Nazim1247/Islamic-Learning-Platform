@@ -9,49 +9,49 @@ const testimonials = [
     name: "Abdullah",
     feedback:
       "I’ve learned so much about the Qur’an and Hadith through this platform. The explanations are clear and easy to follow. Alhamdulillah!",
-    image: "/images/students/mamun.jpg",
+    image: "/images/man.jpeg",
   },
   {
     name: "Fatema Noor",
     feedback:
       "Being able to study Islam from home is a blessing. The teachers are kind, respectful, and very knowledgeable.",
-    image: "/images/students/fatema.jpg",
+    image: "/images/women.jpg",
   },
   {
     name: "Rashidul Islam",
     feedback:
       "The Arabic Grammar course helped me understand the Qur’an better. Lessons were practical and well-structured.",
-    image: "/images/students/rashid.jpg",
+    image: "/images/man.jpeg",
   },
   {
     name: "Tahmina Akter",
     feedback:
       "I loved the flexibility of recorded sessions and live classes. It helped me stay consistent with my learning.",
-    image: "/images/students/tahmina.jpg",
+    image: "/images/women.jpg",
   },
   {
     name: "Nashit Hasan",
     feedback:
       "The one-on-one sessions were incredibly effective. I received full attention and guidance from my teacher.",
-    image: "/images/students/nashit.jpg",
+    image: "/images/man.jpeg",
   },
   {
     name: "Samira Rahman",
     feedback:
       "Alhamdulillah, I finally found an Islamic institute where women can learn comfortably and effectively.",
-    image: "/images/students/samira.jpg",
+    image: "/images/women.jpg",
   },
   {
     name: "Imran Chowdhury",
     feedback:
       "The Certificate at the end of the course really motivated me to complete every module. Great learning experience!",
-    image: "/images/students/imran.jpg",
+    image: "/images/man.jpeg",
   },
   {
     name: "Lubaba Islam",
     feedback:
       "The platform is well organized. Teachers are well-qualified and the support system is great. Highly recommended!",
-    image: "/images/students/lubaba.jpg",
+    image: "/images/women.jpg",
   },
 ];
 
