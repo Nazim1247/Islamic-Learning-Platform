@@ -46,3 +46,18 @@ export async function POST(req) {
     );
   } 
 }
+
+export async function GET(request) {
+  try {
+    const users = await dbConnect(collectionNameObj.userCollection).find().toArray();
+
+    return new NextResponse(JSON.stringify(users), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    return new NextResponse("Internal Server Error", { status: 500 });
+  }
+}
+

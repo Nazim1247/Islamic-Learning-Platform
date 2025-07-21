@@ -82,8 +82,8 @@ const CreateCourseForm = () => {
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-2xl shadow-md my-10">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-        📌 Create a New Course
+      <h2 className="text-xl md:text-3xl font-bold text-center text-orange-600 mb-4">
+        Create a New Course
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
@@ -199,9 +199,9 @@ const CreateCourseForm = () => {
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+          className="w-full bg-orange-500 text-white py-2 hover:bg-orange-600 rounded transition"
         >
-          ➕ Create Course
+           Create Course
         </button>
       </form>
     </div>

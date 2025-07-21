@@ -10,7 +10,7 @@ const CreateClassForm = () => {
     students: "",
     time: "",
     days: [],
-    location: "Online",
+    location: "",
     notes: "",
     admitFee: "",
     monthlyFee: "",
@@ -66,7 +66,7 @@ const CreateClassForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="max-w-3xl mx-auto p-6 bg-white shadow rounded space-y-4">
-      <h2 className="text-2xl font-bold text-center">Create a New Class</h2>
+      <h2 className="text-xl md:text-3xl font-bold text-center text-orange-600 mb-4">Create a New Class</h2>
 
       <input
         type="text"
@@ -147,14 +147,14 @@ const CreateClassForm = () => {
         </div>
       </div>
 
-      <select
-        className="select select-bordered w-full"
+      <input
+        type="text"
+        placeholder="Location (e.g. Online / Offline)"
+        className="input input-bordered w-full"
         value={classData.location}
         onChange={(e) => setClassData({ ...classData, location: e.target.value })}
-      >
-        <option value="Online">Online</option>
-        <option value="Offline">Offline</option>
-      </select>
+        required
+      />
 
       <input
         type="number"
@@ -179,7 +179,7 @@ const CreateClassForm = () => {
         onChange={(e) => setClassData({ ...classData, notes: e.target.value })}
       ></textarea>
 
-      <button type="submit" className="btn btn-primary w-full">
+      <button type="submit" className="btn bg-orange-500 hover:bg-orange-600 rounded text-white w-full">
         Create Class
       </button>
     </form>
