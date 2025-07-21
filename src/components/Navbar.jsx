@@ -27,6 +27,7 @@ const Navbar = () => {
       <li><Link href={'/create-course'}>Create a Course</Link></li>
       <li><Link href={'/create-class'}>Create a Class</Link></li>
       <li><Link href={'/teacher-registration'}>Teacher</Link></li>
+      <li><Link href={'/student-registration'}>Student</Link></li>
       </ul>
     </div>
     <a className="hidden md:flex font-bold text-xl">Islamic Learning Platform</a>
@@ -50,6 +51,7 @@ const Navbar = () => {
       <li><Link href={'/create-course'}>Create a Course</Link></li>
       <li><Link href={'/create-class'}>Create a Class</Link></li>
       <li><Link href={'/teacher-registration'}>Teacher</Link></li>
+      <li><Link href={'/student-registration'}>Student</Link></li>
     </ul>
   </div>
   <div className="navbar-end">

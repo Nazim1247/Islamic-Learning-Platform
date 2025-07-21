@@ -5,6 +5,7 @@ export const collectionNameObj = {
     courseCollection: 'courses',
     classCollection: 'classes',
     teacherCollection: 'teachers',
+    studentCollection: 'students',
     newsletterCollection: 'subscribe',
 }
 

@@ -5,6 +5,7 @@ import ContactSection from "@/components/ContactSection";
 import FAQSection from "@/components/FAQSection";
 import FeaturedCourses from "@/components/FeaturedCourses";
 import HeroSection from "@/components/HeroSection";
+import StudentsPage from "@/components/StudentsList";
 import StudentTestimonials from "@/components/StudentTestimonials";
 import TeachersList from "@/components/TeachersList";
 import TeachersSlider from "@/components/TeachersSection";
@@ -39,6 +40,7 @@ export default function Home() {
         <div className="flex">
           <UsersList />
           <TeachersList />
+          <StudentsPage />
         </div>
         
         <About />
