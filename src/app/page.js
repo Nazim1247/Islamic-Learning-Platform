@@ -1,7 +1,9 @@
 "use client";
 import About from "@/components/About";
 import BlogSection from "@/components/BlogSection";
+import ClassesList from "@/components/ClassesList";
 import ContactSection from "@/components/ContactSection";
+import CoursesList from "@/components/CoursesList";
 import FAQSection from "@/components/FAQSection";
 import FeaturedCourses from "@/components/FeaturedCourses";
 import HeroSection from "@/components/HeroSection";
@@ -19,7 +21,7 @@ export default function Home() {
     dots: true,
     infinite: true,
     speed: 10000,
-    slidesToShow: 3,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 0,
@@ -36,13 +38,25 @@ export default function Home() {
       
       <div className="min-h-40 mt-20">
         <HeroSection />
-        
-        <div className="flex">
-          <UsersList />
+
+        <Slider {...settings}>
+        <div>
+          <UsersList /> 
+        </div>
+        <div>
           <TeachersList />
+        </div>
+        <div>
           <StudentsPage />
         </div>
-        
+        <div>
+          <ClassesList />
+        </div>
+        <div>
+          <CoursesList />
+        </div>
+        </Slider>
+
         <About />
         <WhyChooseUs />
         <FeaturedCourses />

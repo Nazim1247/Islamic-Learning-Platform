@@ -15,7 +15,7 @@ export default function StudentsPage() {
   }, []);
 
   return (
-    <div className="max-w-52 mx-auto p-4 shadow text-center my-2 rounded bg-orange-500 text-white">
+    <div className="max-w-52 mx-auto py-2 px-8 shadow text-center my-2 rounded bg-orange-500 text-white">
         <h2 className="text-xl font-bold">Total Students</h2>
         <p className="text-lg font-semibold">+ {students?.length}</p>
     </div>
