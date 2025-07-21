@@ -1,5 +1,6 @@
 'use client';
 
+import GoogleLoginBtn from "@/social/GoogleLoginBtn";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -56,7 +57,7 @@ export default function LoginPage() {
           >
             Login
           </button>
-
+<GoogleLoginBtn />
           <Link href="/register">
             <p className="mt-3 btn text-center w-full rounded">
               Are you new here?{" "}

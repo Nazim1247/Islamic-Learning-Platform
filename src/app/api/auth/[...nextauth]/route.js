@@ -2,6 +2,8 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import dbConnect, { collectionNameObj } from "@/lib/dbConnect";
+import GoogleProvider from "next-auth/providers/google";
+import { saveUserToDB } from "@/lib/saveUser";
 
 const handler = NextAuth({
   providers: [
@@ -44,7 +46,24 @@ const handler = NextAuth({
         }
       },
     }),
+
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
   ],
+
+  callbacks: {
+    async signIn({ user }) {
+      try {
+        await saveUserToDB(user);
+      } catch (error) {
+        console.error("Error saving user:", error);
+      }
+      return true;
+    }
+  },
+
   pages: {
     signIn: "/login",
   },

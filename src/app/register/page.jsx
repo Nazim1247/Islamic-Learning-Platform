@@ -19,6 +19,7 @@ export default function RegisterPage() {
       image: form.image.value,
       email: form.email.value,
       password: form.password.value,
+      role: "student",
     };
 
     const res = await fetch("/api/user/register", {
@@ -32,7 +33,7 @@ export default function RegisterPage() {
     if (res.ok) {
         alert("User registered successfully")
       setSuccess("Registration successful! Redirecting to login...");
-      setTimeout(() => router.push("/login"), 1500);
+      setTimeout(() => router.push("/"), 1500);
     } else {
         alert("Registration failed!")
       setError(data.message || "Registration failed!");

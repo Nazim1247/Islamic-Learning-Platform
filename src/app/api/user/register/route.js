@@ -4,7 +4,7 @@ import dbConnect, { collectionNameObj } from "@/lib/dbConnect";
 
 export async function POST(req) {
   try {
-    const { name, email, password, image } = await req.json();
+    const { name, email, password, image, role } = await req.json();
 
     // Connect to MongoDB
     const usersCollection = dbConnect(collectionNameObj.userCollection);
@@ -28,6 +28,7 @@ export async function POST(req) {
       email,
       password: hashedPassword,
       image,
+      role,
       createdAt: new Date(),
     };
 
