@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export default function TeacherRegisterForm() {
   const [formData, setFormData] = useState({
-    name: '',fatherName: '',motherName: '',email: '',phone: '',image: '',gender: '',dob: '',nationality: '',nid: '',address: '',qualification: '',institution: '',department: '',experience: '',teachingSubjects: '',availableTime: '',salaryExpectation: '',joiningDate: '',additionalNotes: '',
+    name: '',fatherName: '',motherName: '',email: '',phone: '',image: '',gender: '',dob: '',nationality: '',nid: '',address: '',qualification: '',institution: '',department: '',experience: '',teachingSubjects: '',availableTime: '',salaryExpectation: '',joiningDate: '',additionalNotes: '',role: "",bio: "",
   });
 
   const handleChange = (e) => {
@@ -25,7 +25,7 @@ export default function TeacherRegisterForm() {
     if (result.success) {
       alert("Teacher Registered Successfully!");
       setFormData({
-    name: '',fatherName: '',motherName: '',email: '',phone: '',image: '',gender: '',dob: '',nationality: '',nid: '',address: '',qualification: '',institution: '',department: '',experience: '',teachingSubjects: '',availableTime: '',salaryExpectation: '',joiningDate: '',additionalNotes: '',
+    name: '',fatherName: '',motherName: '',email: '',phone: '',image: '',gender: '',dob: '',nationality: '',nid: '',address: '',qualification: '',institution: '',department: '',experience: '',teachingSubjects: '',availableTime: '',salaryExpectation: '',joiningDate: '',additionalNotes: '',role: "",bio: "",
   });
     } else {
       alert("Failed to Register Teacher");

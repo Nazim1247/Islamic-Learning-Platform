@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import GoogleLoginBtn from "@/social/GoogleLoginBtn";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -33,7 +34,7 @@ export default function RegisterPage() {
     if (res.ok) {
         alert("User registered successfully")
       setSuccess("Registration successful! Redirecting to login...");
-      setTimeout(() => router.push("/"), 1500);
+      setTimeout(() => router.push("/login"), 1500);
     } else {
         alert("Registration failed!")
       setError(data.message || "Registration failed!");
@@ -75,6 +76,7 @@ export default function RegisterPage() {
         <button type="submit" className="btn bg-orange-500 hover:bg-orange-600 text-white rounded w-full">
           Register
         </button>
+        <GoogleLoginBtn />
         <Link href={'/login'}>
         <button className="btn w-full mt-3 rounded">
             Have you already Account in This Page<span className="text-red-500">Please Login</span>
@@ -84,6 +86,7 @@ export default function RegisterPage() {
         {error && <p className="text-red-500 mt-3 text-center">{error}</p>}
         {success && <p className="text-green-600 mt-3 text-center">{success}</p>}
       </form>
+      
     </div>
     </div>
   );

@@ -22,7 +22,8 @@ export default function StudentRegistrationForm() {
     nationality: "",
     religion: "",
     presentAddress: "",
-    permanentAddress: ""
+    permanentAddress: "",
+    role: "",bio: "",
   };
 
   const [formData, setFormData] = useState(initialState);

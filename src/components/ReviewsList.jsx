@@ -14,6 +14,7 @@ const ReviewList = () => {
       try {
         const res = await fetch("/api/reviews");
         const data = await res.json();
+        // console.log("Fetched Reviews Data:", data);
         setReviews(data);
       } catch (err) {
         console.error("Failed to load reviews", err);

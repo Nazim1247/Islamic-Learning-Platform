@@ -39,6 +39,7 @@ const handler = NextAuth({
             name: user.name,
             email: user.email,
             image: user.image || null,
+            role: user.role,
           };
         } catch (err) {
           console.error("Authorize error:", err);
@@ -54,15 +55,27 @@ const handler = NextAuth({
   ],
 
   callbacks: {
-    async signIn({ user }) {
-      try {
-        await saveUserToDB(user);
-      } catch (error) {
-        console.error("Error saving user:", error);
-      }
-      return true;
+  async signIn({ user }) {
+    try {
+      await saveUserToDB(user);
+    } catch (error) {
+      console.error("Error saving user:", error);
     }
+    return true;
   },
+
+  async jwt({ token, user }) {
+    if (user) {
+      token.role = user.role;
+    }
+    return token;
+  },
+
+  async session({ session, token }) {
+    session.user.role = token.role;
+    return session;
+  }
+},
 
   pages: {
     signIn: "/login",
