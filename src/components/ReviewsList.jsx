@@ -26,17 +26,22 @@ const ReviewList = () => {
   const settings = {
     dots: true,
     infinite: true,
-    autoplay: true,
-    speed: 600,
+    speed: 10000,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplaySpeed: 4000,
-    responsive: [{ breakpoint: 1024, settings: { slidesToShow: 1 } }],
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    pauseOnHover: true,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
+    ],
   };
 
   return (
     <section className="py-8" id="reviews">
-      <div className="px-4 text-center">
+      <div className="text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 mb-4">Student Reviews</h2>
         <p className="text-center text-gray-600 mb-8 max-w-xl mx-auto">
           What our students are saying about their learning experience!
@@ -50,12 +55,13 @@ const ReviewList = () => {
                   <Image
                     src={review.image || "/images/user.png"}
                     alt={review.name}
-                    width={60}
-                    height={60}
+                    width={70}
+                    height={70}
                     className="rounded-full object-cover border border-gray-300"
                   />
                   <div className="text-left">
                     <h3 className="text-lg font-semibold text-gray-800">{review.name}</h3>
+                    <p className="text-gray-600 text-sm"> {review.email}</p>
                     <p className="text-yellow-500 text-sm">⭐ {review.rating}/5</p>
                   </div>
                 </div>

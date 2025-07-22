@@ -62,9 +62,9 @@ const ReviewFormModal = () => {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 z-50 bg-opacity-30 flex justify-center items-center bg-black">
+        <div className="fixed inset-0 z-50 bg-opacity-30 flex justify-center items-center">
           <div className="bg-gray-100 p-6 rounded-md w-full max-w-md relative">
-            <button onClick={() => setShowModal(false)} className="absolute top-2 right-2 text-red-500 text-xl">×</button>
+            <button onClick={() => setShowModal(false)} className="absolute top-2 right-2 hover:text-red-500 text-xl">×</button>
             <form onSubmit={handleSubmit} className="space-y-4">
               <input name="name" value={formData.name} readOnly className="w-full border px-3 py-2 bg-gray-100" />
               <input name="email" value={formData.email} readOnly className="w-full border px-3 py-2 bg-gray-100" />

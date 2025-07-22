@@ -11,6 +11,7 @@ import ReviewsList from "@/components/ReviewsList";
 import StudentsPage from "@/components/StudentsList";
 import StudentTestimonials from "@/components/StudentTestimonials";
 import TeachersList from "@/components/TeachersList";
+import TeachersListSlide from "@/components/TeachersListSlide";
 import TeachersSlider from "@/components/TeachersSection";
 import UsersList from "@/components/UsersList";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -61,7 +62,8 @@ export default function Home() {
         <About />
         <WhyChooseUs />
         <FeaturedCourses />
-        <TeachersSlider />
+        {/* <TeachersSlider /> */}
+        <TeachersListSlide />
         <ReviewsList />
         {/* <StudentTestimonials /> */}
         <BlogSection />
