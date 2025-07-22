@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ReviewFormModal from "./ReviewForm";
 
 const ContactSection = () => {
     const [email, setEmail] = useState("");
@@ -35,22 +36,22 @@ const ContactSection = () => {
           {/* Contact Info */}
           <div>
             <h3 className="text-xl font-semibold text-gray-700 mb-4">📞 Contact Information</h3>
-            <p className="text-gray-600 mb-3">
+            <p className="text-gray-600 mb-4">
               📍 Address: Online Islamic Learning Platform <br />
               🌐 Location: Global (Bangladesh, UK, USA, Gulf & more)
             </p>
-            <p className="text-gray-600 mb-3">📧 Email: mdnajim1247@gmail.com</p>
-            <p className="text-gray-600 mb-3">📱 WhatsApp: +8801924772057</p>
+            <p className="text-gray-600 mb-4">📧 Email: mdnajim1247@gmail.com</p>
+            <p className="text-gray-600 mb-4">📱 WhatsApp: +8801924772057</p>
             <p className="text-gray-600">🕐 Support Hours: 9 AM – 9 PM (GMT+6)</p>
           </div>
 
           {/* Newsletter Form */}
           <div>
-            <h3 className="text-xl font-semibold text-gray-700 mb-4">📰 Subscribe to Our Newsletter</h3>
-            <p className="text-gray-600 mb-4">
+            <h3 className="text-xl font-semibold text-gray-700 mb-2">📰 Subscribe to Our Newsletter</h3>
+            <p className="text-gray-600 mb-2">
               Receive weekly reminders, Islamic articles, and course updates directly to your inbox.
             </p>
-            <form onSubmit={handleSubscribe} className="flex flex-col space-y-4">
+            <form onSubmit={handleSubscribe} className="flex flex-col space-y-2">
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -66,6 +67,9 @@ const ContactSection = () => {
                 Subscribe Now
               </button>
             </form>
+            <div className="mt-2">
+              <ReviewFormModal />
+            </div>
           </div>
         </div>
       </div>

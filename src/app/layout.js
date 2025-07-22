@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NextAuthProvider from "@/provider/NextAuthProvider";
 
 
 const geistSans = Geist({
@@ -27,9 +28,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <NextAuthProvider>
         <Navbar />
         {children}
         <Footer />
+        </NextAuthProvider>
       </body>
     </html>
   );

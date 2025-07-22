@@ -7,6 +7,7 @@ import CoursesList from "@/components/CoursesList";
 import FAQSection from "@/components/FAQSection";
 import FeaturedCourses from "@/components/FeaturedCourses";
 import HeroSection from "@/components/HeroSection";
+import ReviewsList from "@/components/ReviewsList";
 import StudentsPage from "@/components/StudentsList";
 import StudentTestimonials from "@/components/StudentTestimonials";
 import TeachersList from "@/components/TeachersList";
@@ -61,7 +62,8 @@ export default function Home() {
         <WhyChooseUs />
         <FeaturedCourses />
         <TeachersSlider />
-        <StudentTestimonials />
+        <ReviewsList />
+        {/* <StudentTestimonials /> */}
         <BlogSection />
         <FAQSection />
         <ContactSection />
