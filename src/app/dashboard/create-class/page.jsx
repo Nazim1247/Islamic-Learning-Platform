@@ -3,7 +3,7 @@ import React from 'react';
 
 const CreateClassPage = () => {
     return (
-        <div className='mt-20 py-4'>
+        <div className=''>
             <CreateClassForm />
         </div>
     );

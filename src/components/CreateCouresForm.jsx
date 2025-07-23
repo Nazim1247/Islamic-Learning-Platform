@@ -81,7 +81,7 @@ const CreateCourseForm = () => {
 
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-2xl shadow-md my-10">
+    <div className="max-w-3xl mx-auto p-4 bg-white rounded-2xl shadow-md">
       <h2 className="text-xl md:text-3xl font-bold text-center text-orange-600 mb-4">
         Create a New Course
       </h2>

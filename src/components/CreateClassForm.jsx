@@ -66,7 +66,7 @@ const CreateClassForm = () => {
 
   return (
     <div id="class">
-    <form onSubmit={handleSubmit} className="max-w-3xl mx-auto p-6 bg-white shadow rounded space-y-4">
+    <form onSubmit={handleSubmit} className="max-w-3xl mx-auto p-4 bg-white shadow rounded space-y-4">
       <h2 className="text-xl md:text-3xl font-bold text-center text-orange-600 mb-4">Create a New Class</h2>
 
       <input

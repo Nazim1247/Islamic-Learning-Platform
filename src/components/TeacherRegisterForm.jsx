@@ -37,7 +37,7 @@ export default function TeacherRegisterForm() {
 };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md mt-20">
+    <div className="max-w-4xl mx-auto p-4 bg-white shadow-md rounded-md">
       <h2 className="text-2xl font-bold text-center mb-6 text-orange-600">Teacher Registration Form</h2>
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {Object.keys(formData).map((key) => (

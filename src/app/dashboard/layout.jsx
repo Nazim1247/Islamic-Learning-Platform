@@ -1,0 +1,101 @@
+'use client';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useSession } from 'next-auth/react';
+import { useState } from 'react';
+import {
+  FaBars, FaTimes, FaChalkboardTeacher, FaUserGraduate, FaUserCog, FaBookOpen,
+  FaListUl, FaPlus, FaUsers, FaClipboardList, FaChartLine, FaTasks
+} from 'react-icons/fa';
+
+const DashboardLayout = ({ children }) => {
+  const pathname = usePathname();
+  const { data: session } = useSession();
+  const userRole = session?.user?.role || 'student'; // Default role
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const isActive = (path) => pathname === path;
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
+  // 🔹 Admin Menu
+  const adminLinks = [
+    { href: '/dashboard/create-course', label: 'Create Course', icon: <FaPlus /> },
+    { href: '/dashboard/create-class', label: 'Create Class', icon: <FaChalkboardTeacher /> },
+    { href: '/dashboard/manage-courses', label: 'Manage Courses', icon: <FaClipboardList /> },
+    { href: '/dashboard/manage-class', label: 'Manage Class', icon: <FaListUl /> }, // ✅ Added
+    { href: '/dashboard/manage-users', label: 'Manage Users', icon: <FaUsers /> }, // ✅ Already present
+    { href: '/dashboard/teacher-registration', label: 'Register Teacher', icon: <FaUserCog /> },
+    { href: '/dashboard/student-registration', label: 'Register Student', icon: <FaUserGraduate /> },
+    { href: '/dashboard/site-analytics', label: 'Site Analytics', icon: <FaChartLine /> },
+  ];
+
+  // 🔹 Teacher Menu
+  const teacherLinks = [
+    { href: '/dashboard/my-classes', label: 'My Classes', icon: <FaChalkboardTeacher /> },
+    { href: '/dashboard/assigned-courses', label: 'Assigned Courses', icon: <FaBookOpen /> },
+    { href: '/dashboard/student-list', label: 'Student List', icon: <FaUsers /> },
+    { href: '/dashboard/grade-submissions', label: 'Grade Submissions', icon: <FaTasks /> },
+  ];
+
+  // 🔹 Student Menu
+  const studentLinks = [
+    { href: '/dashboard/enrolled-courses', label: 'Enrolled Courses', icon: <FaBookOpen /> },
+    { href: '/dashboard/my-results', label: 'My Results', icon: <FaChartLine /> },
+    { href: '/dashboard/class-schedule', label: 'Class Schedule', icon: <FaListUl /> },
+    { href: '/dashboard/submit-assignment', label: 'Submit Assignment', icon: <FaTasks /> },
+  ];
+
+  const getSidebarLinks = () => {
+    switch (userRole) {
+      case 'admin':
+        return adminLinks;
+      case 'teacher':
+        return teacherLinks;
+      case 'student':
+      default:
+        return studentLinks;
+    }
+  };
+
+  return (
+    <div className='mt-16 px-4 max-w-[1250px] mx-auto'>
+      {/* Header */}
+      <div className='flex justify-between items-center py-4 border-b'>
+        <h2 className="text-2xl md:text-3xl font-bold text-orange-600">Dashboard</h2>
+        <button onClick={toggleSidebar} className='md:hidden text-2xl'>
+          {isSidebarOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
+
+      <div className='flex flex-col md:flex-row gap-4 mt-6'>
+        {/* Sidebar */}
+        <aside className={`md:w-1/5 md:border-r w-full md:block ${isSidebarOpen ? 'block' : 'hidden'} bg-white md:bg-transparent shadow md:shadow-none p-4 rounded`}>
+          <h3 className='text-lg font-semibold text-orange-500 mb-4 capitalize'>{userRole} Menu</h3>
+          <ul className='space-y-2'>
+            {getSidebarLinks().map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`flex items-center gap-2 px-4 py-2 rounded hover:bg-orange-100 transition ${
+                    isActive(link.href) ? 'text-orange-600 font-semibold bg-orange-50' : 'text-gray-700'
+                  }`}
+                >
+                  <span className="text-lg">{link.icon}</span>
+                  <span>{link.label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </aside>
+
+        {/* Main Content */}
+        <main className='md:w-4/5 w-full bg-gray-100 p-6 rounded shadow'>
+          {children}
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default DashboardLayout;

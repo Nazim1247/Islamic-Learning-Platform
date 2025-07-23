@@ -16,16 +16,17 @@ const Navbar = () => {
   const isActive = (path) => pathname === path;
 
   const goToDashboard = () => {
-    if (role === 'admin') router.push('/dashboard/admin');
-    else if (role === 'teacher') router.push('/dashboard/teacher');
-    else router.push('/dashboard/student');
+    // if (role === 'admin') router.push('/dashboard/admin');
+    // else if (role === 'teacher') router.push('/dashboard/teacher');
+    // else router.push('/dashboard/student');
+    router.push('/dashboard');
   };
 
   // const isAdmin = role === 'admin';
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 bg-white">
-      <div className="navbar shadow-sm max-w-[1250px] mx-auto px-4 py-3">
+      <div className="navbar shadow-sm max-w-[1250px] mx-auto px-4 py-2">
 
         {/* Navbar Start */}
         <div className="navbar-start">

@@ -54,7 +54,7 @@ export default function StudentRegistrationForm() {
 
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white shadow rounded mt-20">
+    <div className="max-w-4xl mx-auto p-4 bg-white shadow rounded">
       <h2 className="text-2xl font-bold mb-6 text-orange-600 text-center">Student Registration Form</h2>
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {Object.keys(initialState).map((key) => (
