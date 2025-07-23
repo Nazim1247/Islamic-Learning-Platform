@@ -1,84 +1,84 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-const ManageCourse = () => {
-  const { data: session } = useSession();
-  const email = session?.user?.email;
+const ManageCourses = () => {
   const [courses, setCourses] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  // Fetch courses for this user's email
   useEffect(() => {
     const fetchCourses = async () => {
-      try {
-        const res = await fetch('/api/manage-courses', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email }),
-        });
-        const data = await res.json();
-        console.log(data);
-        setCourses(data);
-      } catch (err) {
-        console.error('Fetch error:', err);
-      } finally {
-        setLoading(false);
-      }
+      const res = await fetch("/api/courses");
+      const data = await res.json();
+      setCourses(data);
     };
+    fetchCourses();
+  }, []);
 
-    if (email) fetchCourses();
-  }, [email]);
+  const handleEdit = (id) => {
+    console.log("Edit course:", id);
+    // Navigate to edit page or open modal
+  };
 
-  // Delete course by ID
   const handleDelete = async (id) => {
-    const confirmDelete = confirm('Are you sure you want to delete this course?');
+    const confirmDelete = confirm("Are you sure you want to delete this course?");
     if (!confirmDelete) return;
 
     try {
       const res = await fetch(`/api/delete-course`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id }),
       });
       const result = await res.json();
+
       if (result.success) {
-        setCourses(courses.filter((c) => c._id !== id));
+        setCourses(courses.filter((course) => course._id !== id));
       }
-    } catch (err) {
-      console.error('Delete error:', err);
+    } catch (error) {
+      console.error("Delete error:", error);
     }
   };
 
   return (
-    <div>
-      <h2 className="text-xl font-bold mb-4">Manage Courses</h2>
-      {loading ? (
-        <p>Loading...</p>
-      ) : courses.length === 0 ? (
-        <p>No courses found.</p>
-      ) : (
-        <table className="table-auto w-full border">
-          <thead className="bg-gray-100">
+    <div className="">
+      <h2 className="text-2xl font-bold mb-4 text-orange-500">Total Courses: ({courses?.length})</h2>
+
+      <div className="overflow-x-auto">
+        <table className="min-w-full border border-gray-300">
+          <thead className="bg-gray-100 text-left">
             <tr>
-              <th className="border px-4 py-2">#</th>
-              <th className="border px-4 py-2">Course Name</th>
-              <th className="border px-4 py-2">Category</th>
-              <th className="border px-4 py-2">Actions</th>
+              <th className="border px-4 py-1">#</th>
+              <th className="border px-4 py-1">Image</th>
+              <th className="border px-4 py-1">Title</th>
+              <th className="border px-4 py-1">Price</th>
+              <th className="border px-4 py-1">Instructor</th>
+              <th className="border px-4 py-1 text-center">Actions</th>
             </tr>
           </thead>
           <tbody>
             {courses.map((course, index) => (
               <tr key={course._id}>
-                <td className="border px-4 py-2 text-center">{index + 1}</td>
-                <td className="border px-4 py-2">{course.name}</td>
-                <td className="border px-4 py-2">{course.category}</td>
-                <td className="border px-4 py-2 text-center">
-                  <button className="bg-blue-500 text-white px-2 py-1 rounded mr-2">Edit</button>
+                <td className="border px-4 py-1 text-center">{index + 1}</td>
+                <td className="border px-4 py-1">
+                  <img
+                    src={course.image || "/placeholder.jpg"}
+                    alt={course.title}
+                    className="w-16 h-16 object-cover rounded"
+                  />
+                </td>
+                <td className="border px-4 py-1">{course.title}</td>
+                <td className="border px-4 py-1">${course.price}</td>
+                <td className="border px-4 py-1">{course.instructor || "N/A"}</td>
+                <td className="border px-4 py-1 text-center">
                   <button
-                    className="bg-red-500 text-white px-2 py-1 rounded"
+                    onClick={() => handleEdit(course._id)}
+                    className="bg-orange-500 text-white px-3 py-1 rounded mr-2 hover:bg-orange-600"
+                  >
+                    Edit
+                  </button>
+                  <button
                     onClick={() => handleDelete(course._id)}
+                    className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
                   >
                     Delete
                   </button>
@@ -87,9 +87,9 @@ const ManageCourse = () => {
             ))}
           </tbody>
         </table>
-      )}
+      </div>
     </div>
   );
 };
 
-export default ManageCourse;
+export default ManageCourses;

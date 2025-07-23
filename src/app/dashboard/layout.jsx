@@ -90,7 +90,7 @@ const DashboardLayout = ({ children }) => {
         </aside>
 
         {/* Main Content */}
-        <main className='md:w-4/5 w-full bg-gray-100 p-6 rounded shadow'>
+        <main className='md:w-4/5 w-full bg-gray-100 p-4 rounded shadow'>
           {children}
         </main>
       </div>
