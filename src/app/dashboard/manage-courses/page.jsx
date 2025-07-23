@@ -15,11 +15,6 @@ const ManageCourses = () => {
     fetchCourses();
   }, []);
 
-//   const handleEdit = (id) => {
-//     console.log("Edit course:", id);
-//     // Navigate to edit page or open modal
-//   };
-
   const handleDelete = async (id) => {
     const confirmDelete = confirm("Are you sure you want to delete this course?");
     if (!confirmDelete) return;
@@ -42,7 +37,7 @@ const ManageCourses = () => {
 
   return (
     <div className="">
-      <h2 className="text-2xl font-bold mb-4 text-orange-500">Total Courses: ({courses?.length})</h2>
+      <h2 className="text-2xl font-bold mb-4 bg-orange-500 text-white px-4 py-1 rounded-t">Total Courses: ({courses?.length})</h2>
 
       <div className="overflow-x-auto">
         <table className="min-w-full border border-gray-300">
