@@ -12,25 +12,25 @@ import {
 const DashboardLayout = ({ children }) => {
   const pathname = usePathname();
   const { data: session } = useSession();
-  const userRole = session?.user?.role || 'student'; // Default role
+  const userRole = session?.user?.role || 'student';
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const isActive = (path) => pathname === path;
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
-  // 🔹 Admin Menu
+  // Admin Menu
   const adminLinks = [
     { href: '/dashboard/create-course', label: 'Create Course', icon: <FaPlus /> },
     { href: '/dashboard/create-class', label: 'Create Class', icon: <FaChalkboardTeacher /> },
-    { href: '/dashboard/manage-courses', label: 'Manage Courses', icon: <FaClipboardList /> },
-    { href: '/dashboard/manage-class', label: 'Manage Class', icon: <FaListUl /> }, // ✅ Added
-    { href: '/dashboard/manage-users', label: 'Manage Users', icon: <FaUsers /> }, // ✅ Already present
     { href: '/dashboard/teacher-registration', label: 'Register Teacher', icon: <FaUserCog /> },
     { href: '/dashboard/student-registration', label: 'Register Student', icon: <FaUserGraduate /> },
+    { href: '/dashboard/manage-courses', label: 'Manage Courses', icon: <FaClipboardList /> },
+    { href: '/dashboard/manage-class', label: 'Manage Class', icon: <FaListUl /> },
+    { href: '/dashboard/manage-users', label: 'Manage Users', icon: <FaUsers /> },
     { href: '/dashboard/site-analytics', label: 'Site Analytics', icon: <FaChartLine /> },
   ];
 
-  // 🔹 Teacher Menu
+  // Teacher Menu
   const teacherLinks = [
     { href: '/dashboard/my-classes', label: 'My Classes', icon: <FaChalkboardTeacher /> },
     { href: '/dashboard/assigned-courses', label: 'Assigned Courses', icon: <FaBookOpen /> },
@@ -38,7 +38,7 @@ const DashboardLayout = ({ children }) => {
     { href: '/dashboard/grade-submissions', label: 'Grade Submissions', icon: <FaTasks /> },
   ];
 
-  // 🔹 Student Menu
+  // Student Menu
   const studentLinks = [
     { href: '/dashboard/enrolled-courses', label: 'Enrolled Courses', icon: <FaBookOpen /> },
     { href: '/dashboard/my-results', label: 'My Results', icon: <FaChartLine /> },
