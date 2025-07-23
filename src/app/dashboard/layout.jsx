@@ -25,7 +25,7 @@ const DashboardLayout = ({ children }) => {
     { href: '/dashboard/teacher-registration', label: 'Register Teacher', icon: <FaUserCog /> },
     { href: '/dashboard/student-registration', label: 'Register Student', icon: <FaUserGraduate /> },
     { href: '/dashboard/manage-courses', label: 'Manage Courses', icon: <FaClipboardList /> },
-    { href: '/dashboard/manage-class', label: 'Manage Class', icon: <FaListUl /> },
+    { href: '/dashboard/manage-classes', label: 'Manage Classes', icon: <FaListUl /> },
     { href: '/dashboard/manage-users', label: 'Manage Users', icon: <FaUsers /> },
     { href: '/dashboard/site-analytics', label: 'Site Analytics', icon: <FaChartLine /> },
   ];

@@ -1,5 +1,6 @@
 'use client';
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const ManageCourses = () => {
@@ -14,10 +15,10 @@ const ManageCourses = () => {
     fetchCourses();
   }, []);
 
-  const handleEdit = (id) => {
-    console.log("Edit course:", id);
-    // Navigate to edit page or open modal
-  };
+//   const handleEdit = (id) => {
+//     console.log("Edit course:", id);
+//     // Navigate to edit page or open modal
+//   };
 
   const handleDelete = async (id) => {
     const confirmDelete = confirm("Are you sure you want to delete this course?");
@@ -70,12 +71,13 @@ const ManageCourses = () => {
                 <td className="border px-4 py-1">${course.price}</td>
                 <td className="border px-4 py-1">{course.instructor || "N/A"}</td>
                 <td className="border px-4 py-1 text-center">
+                  <Link href={`/dashboard/edit-course/${course._id}`}>
                   <button
-                    onClick={() => handleEdit(course._id)}
                     className="bg-orange-500 text-white px-3 py-1 rounded mr-2 hover:bg-orange-600"
                   >
                     Edit
                   </button>
+                  </Link>
                   <button
                     onClick={() => handleDelete(course._id)}
                     className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
