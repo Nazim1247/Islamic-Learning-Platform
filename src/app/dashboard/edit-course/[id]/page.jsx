@@ -13,7 +13,6 @@ const EditCourseForm = () => {
     try {
       const res = await fetch(`/api/courses/${id}`);
       const data = await res.json();
-      console.log("Fetched Course:", data);
       setFormData(data);
     } catch (error) {
       console.error("Fetch error:", error);
