@@ -16,13 +16,8 @@ const Navbar = () => {
   const isActive = (path) => pathname === path;
 
   const goToDashboard = () => {
-    // if (role === 'admin') router.push('/dashboard/admin');
-    // else if (role === 'teacher') router.push('/dashboard/teacher');
-    // else router.push('/dashboard/student');
     router.push('/dashboard');
   };
-
-  // const isAdmin = role === 'admin';
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 bg-white">
@@ -42,7 +37,8 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
               <li><Link className={isActive('/') ? 'text-orange-500 font-semibold' : ''} href="/">Home</Link></li>
               <li><Link className={isActive('/education') ? 'text-orange-500 font-semibold' : ''} href="/education">Educations</Link></li>
-              <li>
+              <li><Link className={isActive('/courses') ? 'text-orange-500 font-semibold' : ''} href="/courses">All Courses</Link></li>
+              {/* <li>
                 <details>
                   <summary>Services</summary>
                   <ul className="p-2">
@@ -50,17 +46,9 @@ const Navbar = () => {
                     <li><Link href="/courses" className={isActive('/courses') ? 'text-orange-500 font-semibold' : ''}>Courses</Link></li>
                   </ul>
                 </details>
-              </li>
+              </li> */}
               <li><Link className={isActive('/about') ? 'text-orange-500 font-semibold' : ''} href="/about">About</Link></li>
               <li><Link className={isActive('/contact') ? 'text-orange-500 font-semibold' : ''} href="/contact">Contact</Link></li>
-              {/* {isAdmin && (
-                <>
-                  <li><Link className={isActive('/create-course') ? 'text-orange-500 font-semibold' : ''} href="/create-course">Create Course</Link></li>
-                  <li><Link className={isActive('/create-class') ? 'text-orange-500 font-semibold' : ''} href="/create-class">Create Class</Link></li>
-                  <li><Link className={isActive('/teacher-registration') ? 'text-orange-500 font-semibold' : ''} href="/teacher-registration">Teacher</Link></li>
-                  <li><Link className={isActive('/student-registration') ? 'text-orange-500 font-semibold' : ''} href="/student-registration">Student</Link></li>
-                </>
-              )} */}
             </ul>
           </div>
           <Link href="/" className="hidden md:flex font-bold text-xl">Learning Platform</Link>
@@ -71,7 +59,8 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">
             <li><Link className={isActive('/') ? 'text-orange-500 font-semibold' : ''} href="/">Home</Link></li>
             <li><Link className={isActive('/education') ? 'text-orange-500 font-semibold' : ''} href="/education">Educations</Link></li>
-            <li>
+            <li><Link className={isActive('/courses') ? 'text-orange-500 font-semibold' : ''} href="/courses">All Courses</Link></li>
+            {/* <li>
               <details>
                 <summary>Services</summary>
                 <ul className="p-2 bg-white rounded-box shadow">
@@ -79,17 +68,9 @@ const Navbar = () => {
                   <li><Link href="/courses" className={isActive('/courses') ? 'text-orange-500 font-semibold' : ''}>Courses</Link></li>
                 </ul>
               </details>
-            </li>
+            </li> */}
             <li><Link className={isActive('/about') ? 'text-orange-500 font-semibold' : ''} href="/about">About</Link></li>
             <li><Link className={isActive('/contact') ? 'text-orange-500 font-semibold' : ''} href="/contact">Contact</Link></li>
-            {/* {isAdmin && (
-              <>
-                <li><Link className={isActive('/create-course') ? 'text-orange-500 font-semibold' : ''} href="/create-course">Create Course</Link></li>
-                <li><Link className={isActive('/create-class') ? 'text-orange-500 font-semibold' : ''} href="/create-class">Create Class</Link></li>
-                <li><Link className={isActive('/teacher-registration') ? 'text-orange-500 font-semibold' : ''} href="/teacher-registration">Teacher</Link></li>
-                <li><Link className={isActive('/student-registration') ? 'text-orange-500 font-semibold' : ''} href="/student-registration">Student</Link></li>
-              </>
-            )} */}
           </ul>
         </div>
 

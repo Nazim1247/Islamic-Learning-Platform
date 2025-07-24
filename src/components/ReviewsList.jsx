@@ -41,7 +41,7 @@ const ReviewList = () => {
   };
 
   return (
-    <section className="py-8" id="reviews">
+    <section className="" id="reviews">
       <div className="text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-orange-600 mb-4">Student Reviews</h2>
         <p className="text-center text-gray-600 mb-8 max-w-xl mx-auto">

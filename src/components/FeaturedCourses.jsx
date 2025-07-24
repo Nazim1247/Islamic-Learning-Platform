@@ -2,23 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import Slider from "react-slick";
-
-const settings = {
-    dots: true,
-    infinite: true,
-    speed: 10000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: "linear",
-    pauseOnHover: true,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
-    ],
-  };
 
 const FeaturedCourses = () => {
   const [courses, setCourses] = useState([]);
@@ -56,14 +39,14 @@ const FeaturedCourses = () => {
   };
 
   return (
-    <section className="py-8 px-4">
+    <section className="mt-16 p-4 max-w-[1250px] mx-auto">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-4">
         Featured Courses
       </h2>
       <p className="text-center text-gray-600 mb-8 max-w-4xl mx-auto">Explore our most popular and high-quality Islamic courses carefully selected to help you grow in knowledge and spirituality. Learn Qur’an, Hadith, Fiqh, Arabic, and more – all from experienced scholars.</p>
 
-      <Slider {...settings}>
-        {courses.map((course) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {courses.map((course) => (
           <div key={course._id} className="p-3">
             <div className="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition-all space-y-2">
   {course.image && (
@@ -100,8 +83,8 @@ const FeaturedCourses = () => {
 
           </div>
         ))}
-      </Slider>
-
+    </div>
+      
       {openModal && selectedCourse && (
   <div
     className="fixed inset-0 bg-opacity-50 z-50 flex items-center justify-center overflow-y-auto px-4 py-10 mb-4"

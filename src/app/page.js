@@ -57,11 +57,10 @@ export default function Home() {
         </div>
         </Slider>
 
-        <FeaturedCourses />
-        <TeachersListSlide />
-        <ReviewsList />
         <About />
         <WhyChooseUs />
+        <ReviewsList />
+        <TeachersListSlide />
         <BlogSection />
         <FAQSection />
         <ContactSection />
