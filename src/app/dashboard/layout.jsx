@@ -59,10 +59,10 @@ const DashboardLayout = ({ children }) => {
   };
 
   return (
-    <div className='mt-16 px-4 max-w-[1250px] mx-auto'>
+    <div className='mt-16 md:mt-4 px-4 max-w-[1250px] mx-auto'>
       {/* Header */}
       <div className='flex justify-between items-center py-4 border-b'>
-        <h2 className="text-2xl md:text-3xl font-bold text-orange-600">Dashboard</h2>
+        <h2 className="md:hidden flex text-2xl md:text-3xl font-bold text-orange-600">Dashboard</h2>
         <button onClick={toggleSidebar} className='md:hidden text-2xl'>
           {isSidebarOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -70,7 +70,7 @@ const DashboardLayout = ({ children }) => {
 
       <div className='flex flex-col md:flex-row gap-4 mt-6'>
         {/* Sidebar */}
-        <aside className={`md:w-1/5 md:border-r w-full md:block ${isSidebarOpen ? 'block' : 'hidden'} bg-white md:bg-transparent shadow md:shadow-none p-4 rounded`}>
+        <aside className={`md:w-1/5 md:border-r w-full md:block ${isSidebarOpen ? 'block' : 'hidden'} bg-white md:bg-transparent shadow md:shadow-none rounded`}>
           <h3 className='text-lg font-semibold text-orange-500 mb-4 capitalize'>{userRole} Menu</h3>
           <ul className='space-y-2'>
             {getSidebarLinks().map((link) => (

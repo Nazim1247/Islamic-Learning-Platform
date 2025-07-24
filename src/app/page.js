@@ -9,10 +9,8 @@ import FeaturedCourses from "@/components/FeaturedCourses";
 import HeroSection from "@/components/HeroSection";
 import ReviewsList from "@/components/ReviewsList";
 import StudentsPage from "@/components/StudentsList";
-import StudentTestimonials from "@/components/StudentTestimonials";
 import TeachersList from "@/components/TeachersList";
 import TeachersListSlide from "@/components/TeachersListSlide";
-import TeachersSlider from "@/components/TeachersSection";
 import UsersList from "@/components/UsersList";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Slider from "react-slick";
@@ -59,13 +57,11 @@ export default function Home() {
         </div>
         </Slider>
 
-        <About />
-        <WhyChooseUs />
         <FeaturedCourses />
-        {/* <TeachersSlider /> */}
         <TeachersListSlide />
         <ReviewsList />
-        {/* <StudentTestimonials /> */}
+        <About />
+        <WhyChooseUs />
         <BlogSection />
         <FAQSection />
         <ContactSection />

@@ -29,7 +29,7 @@ const articles = [
 
 const BlogSection = () => {
   return (
-    <section className="py-8" id="blog">
+    <section className="py-4" id="blog">
       <div className="px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-4">
           Islamic Articles & Blog

@@ -5,18 +5,20 @@ import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 
 const settings = {
-  dots: true,
-  infinite: true,
-  speed: 10000,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 1000,
-  responsive: [
-    { breakpoint: 1024, settings: { slidesToShow: 2 } },
-    { breakpoint: 640, settings: { slidesToShow: 1 } },
-  ],
-};
+    dots: true,
+    infinite: true,
+    speed: 10000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    pauseOnHover: true,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
+    ],
+  };
 
 const FeaturedCourses = () => {
   const [courses, setCourses] = useState([]);
@@ -71,6 +73,7 @@ const FeaturedCourses = () => {
     height={200}
     alt={course.title}
     className="rounded-lg h-40 w-full object-cover"
+    loading="lazy"
   />
 )}  
   <h3 className="text-xl font-bold text-gray-800">{course.title}</h3>
