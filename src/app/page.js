@@ -5,8 +5,8 @@ import ClassesList from "@/components/ClassesList";
 import ContactSection from "@/components/ContactSection";
 import CoursesList from "@/components/CoursesList";
 import FAQSection from "@/components/FAQSection";
-import FeaturedCourses from "@/components/FeaturedCourses";
 import HeroSection from "@/components/HeroSection";
+import ResultsList from "@/components/ResultList";
 import ReviewsList from "@/components/ReviewsList";
 import StudentsPage from "@/components/StudentsList";
 import TeachersList from "@/components/TeachersList";
@@ -57,6 +57,7 @@ export default function Home() {
         </div>
         </Slider>
 
+        <ResultsList />
         <About />
         <WhyChooseUs />
         <ReviewsList />

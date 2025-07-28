@@ -8,6 +8,8 @@ import {
   FaBars, FaTimes, FaChalkboardTeacher, FaUserGraduate, FaUserCog, FaBookOpen,
   FaListUl, FaPlus, FaUsers, FaClipboardList, FaChartLine, FaTasks
 } from 'react-icons/fa';
+import { BsFillFileEarmarkSpreadsheetFill } from "react-icons/bs";
+
 
 const DashboardLayout = ({ children }) => {
   const pathname = usePathname();
@@ -27,6 +29,7 @@ const DashboardLayout = ({ children }) => {
     { href: '/dashboard/manage-courses', label: 'Manage Courses', icon: <FaClipboardList /> },
     { href: '/dashboard/manage-classes', label: 'Manage Classes', icon: <FaListUl /> },
     { href: '/dashboard/manage-users', label: 'Manage Users', icon: <FaUsers /> },
+    { href: '/dashboard/result', label: 'Create a Result', icon: <BsFillFileEarmarkSpreadsheetFill /> },
     { href: '/dashboard/site-analytics', label: 'Site Analytics', icon: <FaChartLine /> },
   ];
 
