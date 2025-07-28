@@ -1,5 +1,5 @@
 'use client';
-
+import { FaTachometerAlt, FaUser, FaCog, FaMoon, FaSignOutAlt } from "react-icons/fa";
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
@@ -38,15 +38,6 @@ const Navbar = () => {
               <li><Link className={isActive('/') ? 'text-orange-500 font-semibold' : ''} href="/">Home</Link></li>
               <li><Link className={isActive('/education') ? 'text-orange-500 font-semibold' : ''} href="/education">Educations</Link></li>
               <li><Link className={isActive('/courses') ? 'text-orange-500 font-semibold' : ''} href="/courses">All Courses</Link></li>
-              {/* <li>
-                <details>
-                  <summary>Services</summary>
-                  <ul className="p-2">
-                    <li><Link href="/classes" className={isActive('/classes') ? 'text-orange-500 font-semibold' : ''}>Classes</Link></li>
-                    <li><Link href="/courses" className={isActive('/courses') ? 'text-orange-500 font-semibold' : ''}>Courses</Link></li>
-                  </ul>
-                </details>
-              </li> */}
               <li><Link className={isActive('/about') ? 'text-orange-500 font-semibold' : ''} href="/about">About</Link></li>
               <li><Link className={isActive('/contact') ? 'text-orange-500 font-semibold' : ''} href="/contact">Contact</Link></li>
             </ul>
@@ -60,15 +51,6 @@ const Navbar = () => {
             <li><Link className={isActive('/') ? 'text-orange-500 font-semibold' : ''} href="/">Home</Link></li>
             <li><Link className={isActive('/education') ? 'text-orange-500 font-semibold' : ''} href="/education">Educations</Link></li>
             <li><Link className={isActive('/courses') ? 'text-orange-500 font-semibold' : ''} href="/courses">All Courses</Link></li>
-            {/* <li>
-              <details>
-                <summary>Services</summary>
-                <ul className="p-2 bg-white rounded-box shadow">
-                  <li><Link href="/classes" className={isActive('/classes') ? 'text-orange-500 font-semibold' : ''}>Classes</Link></li>
-                  <li><Link href="/courses" className={isActive('/courses') ? 'text-orange-500 font-semibold' : ''}>Courses</Link></li>
-                </ul>
-              </details>
-            </li> */}
             <li><Link className={isActive('/about') ? 'text-orange-500 font-semibold' : ''} href="/about">About</Link></li>
             <li><Link className={isActive('/contact') ? 'text-orange-500 font-semibold' : ''} href="/contact">Contact</Link></li>
           </ul>
@@ -90,20 +72,51 @@ const Navbar = () => {
                 </div>
               </div>
               <ul tabIndex={0} className="mt-3 z-[99] p-2 shadow menu menu-sm dropdown-content bg-white rounded-box w-52">
-                <li><button onClick={goToDashboard}>Dashboard</button></li>
-                <li><Link href="/profile">Profile</Link></li>
-                <li><Link href="/settings">Settings</Link></li>
                 <li>
-                  <label className="cursor-pointer justify-between">
-                    <span>Dark Mode</span>
-                    <input type="checkbox" className="toggle toggle-sm" />
-                  </label>
-                </li>
-                <li><button onClick={() => signOut({ callbackUrl: '/' })}>Logout</button></li>
+        <button onClick={goToDashboard} className="flex items-center gap-2 hover:bg-orange-100 px-3 py-2 rounded-md">
+          <FaTachometerAlt /> Dashboard
+        </button>
+      </li>
+      <li>
+        <Link href="/profile" className="flex items-center gap-2 hover:bg-orange-100 px-3 py-2 rounded-md">
+          <FaUser /> Profile
+        </Link>
+      </li>
+      
+      <li>
+      <details>
+          <summary className="flex items-center gap-2 hover:bg-orange-100 px-3 py-2 rounded-md"><FaCog /> Settings</summary>
+          <ul className="bg-base-100 rounded-t-none p-2">
+            <li>
+              <Link href="/profile/update-profile" className="flex items-center gap-2 hover:bg-orange-100 px-3 py-2 rounded-md"> 
+              Update Profile
+              </Link>
+              </li>
+            <li><a>Link 2</a></li>
+          </ul>
+        </details>
+        </li>
+      <li>
+        <label className="flex items-center justify-between hover:bg-orange-100 px-3 py-2 rounded-md cursor-pointer">
+          <span className="flex items-center gap-2">
+            <FaMoon /> Dark Mode
+          </span>
+          <input
+            type="checkbox"
+            className="toggle toggle-sm"
+            
+          />
+        </label>
+      </li>
+      <li>
+        <button onClick={() => signOut({ callbackUrl: '/' })} className="flex items-center gap-2 hover:bg-red-100 text-red-600 px-3 py-2 rounded-md">
+          <FaSignOutAlt /> Logout
+        </button>
+      </li>
               </ul>
             </div>
           ) : (
-            <Link href="/login" className="btn btn-sm btn-primary">Login</Link>
+            <Link href="/login" className="btn btn-sm bg-orange-500 hover:bg-orange-600 text-white rounded">Login</Link>
           )}
         </div>
       </div>

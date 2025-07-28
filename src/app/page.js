@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <div className="max-w-[1250px] mx-auto">
       
-      <div className="min-h-40 mt-20">
+      <div className="min-h-40 mt-16">
         <HeroSection />
 
         <Slider {...settings}>

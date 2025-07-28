@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export default function EducationPage() {
@@ -75,11 +76,13 @@ export default function EducationPage() {
   </div>
 
   <div className='mt-4'>
+    <Link href={'https://forms.gle/dMAxDNnN6UCLiGF27'} target="_blank">
     <button
       className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition animate-pulse w-full"
     >
       Admit Now
     </button>
+    </Link>
   </div>
 </div>
         ))}
