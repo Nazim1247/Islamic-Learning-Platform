@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { FaUserGraduate, FaChalkboardTeacher, FaListOl, FaFileAlt } from "react-icons/fa";
 import Slider from 'react-slick';
@@ -42,9 +43,10 @@ export default function ResultsList() {
     {results.map((result) => (
       <div key={result?._id} className="px-2">
         <div className="bg-white shadow-md rounded-xl p-5 hover:shadow-lg transition-all duration-300 mb-8">
-          <img
+          <Image
             src={result.imageUrl}
             alt={result.name}
+            width={200} height={200}
             className="w-full h-40 object-cover rounded-md mb-4"
           />
           <h2 className="text-xl font-bold text-orange-500 flex items-center gap-2">

@@ -11,6 +11,7 @@ import ReviewsList from "@/components/ReviewsList";
 import StudentsPage from "@/components/StudentsList";
 import TeachersList from "@/components/TeachersList";
 import TeachersListSlide from "@/components/TeachersListSlide";
+import TotalReview from "@/components/TotalReview";
 import UsersList from "@/components/UsersList";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Slider from "react-slick";
@@ -28,7 +29,7 @@ export default function Home() {
     cssEase: "linear",
     pauseOnHover: true,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 1024, settings: { slidesToShow: 4 } },
       { breakpoint: 640, settings: { slidesToShow: 1 } },
     ],
   };
@@ -47,7 +48,7 @@ export default function Home() {
           <TeachersList />
         </div>
         <div>
-          <StudentsPage />
+          <TotalReview />
         </div>
         <div>
           <ClassesList />
@@ -58,10 +59,11 @@ export default function Home() {
         </Slider>
 
         <ResultsList />
-        <About />
-        <WhyChooseUs />
+        <StudentsPage />
         <ReviewsList />
         <TeachersListSlide />
+        <WhyChooseUs />
+        <About />
         <BlogSection />
         <FAQSection />
         <ContactSection />

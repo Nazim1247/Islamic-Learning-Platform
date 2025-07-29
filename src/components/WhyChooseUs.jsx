@@ -68,7 +68,7 @@ const WhyChooseUs = () => {
   };
 
   return (
-    <section className="py-8">
+    <section className="pb-8">
       <div className="px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-4">Why Choose Us?</h2>
         <p className="text-gray-600 mb-8 px-4 max-w-5xl mx-auto">
@@ -87,11 +87,6 @@ const WhyChooseUs = () => {
           ))}
         </Slider>
 
-        <div className="mt-10">
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-12 py-2 rounded-xl text-lg shadow-md animate-pulse">
-            Enroll Now
-          </button>
-        </div>
       </div>
     </section>
   );

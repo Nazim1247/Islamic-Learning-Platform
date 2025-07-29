@@ -25,11 +25,11 @@ const DashboardLayout = ({ children }) => {
     { href: '/dashboard/create-course', label: 'Create Course', icon: <FaPlus /> },
     { href: '/dashboard/create-class', label: 'Create Class', icon: <FaChalkboardTeacher /> },
     { href: '/dashboard/teacher-registration', label: 'Register Teacher', icon: <FaUserCog /> },
-    { href: '/dashboard/student-registration', label: 'Register Student', icon: <FaUserGraduate /> },
+    { href: '/dashboard/student-registration', label: 'Graduates Student Form', icon: <FaUserGraduate /> },
+    { href: '/dashboard/result', label: 'Create a Result', icon: <BsFillFileEarmarkSpreadsheetFill /> },
     { href: '/dashboard/manage-courses', label: 'Manage Courses', icon: <FaClipboardList /> },
     { href: '/dashboard/manage-classes', label: 'Manage Classes', icon: <FaListUl /> },
     { href: '/dashboard/manage-users', label: 'Manage Users', icon: <FaUsers /> },
-    { href: '/dashboard/result', label: 'Create a Result', icon: <BsFillFileEarmarkSpreadsheetFill /> },
     { href: '/dashboard/site-analytics', label: 'Site Analytics', icon: <FaChartLine /> },
   ];
 

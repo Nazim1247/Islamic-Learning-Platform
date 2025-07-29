@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
   return (
     <div>
-      <section className="px-4 bg-white text-gray-800">
+      <section className="px-4 bg-white text-gray-800 mb-8">
         <div className=" text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-orange-600">About Us</h2>
           <p className="text-lg mb-8">
@@ -36,12 +36,6 @@ const About = () => {
               <br />— (Surah Al-A'la, 87:14–15)
             </p>
           </div>
-
-          <div className="mt-6">
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-12 py-2 rounded-xl text-lg shadow-md animate-pulse">
-            Enroll Now
-          </button>
-        </div>
         </div>
       </section>
     </div>
