@@ -1,6 +1,6 @@
 "use client";
 import About from "@/components/About";
-import BlogSection from "@/components/BlogSection";
+import BlogPage from "@/components/BlogsList";
 import ClassesList from "@/components/ClassesList";
 import ContactSection from "@/components/ContactSection";
 import CoursesList from "@/components/CoursesList";
@@ -63,8 +63,8 @@ export default function Home() {
         <ReviewsList />
         <TeachersListSlide />
         <WhyChooseUs />
+        <BlogPage />
         <About />
-        <BlogSection />
         <FAQSection />
         <ContactSection />
       </div>

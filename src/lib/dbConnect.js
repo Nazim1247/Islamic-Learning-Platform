@@ -9,6 +9,7 @@ export const collectionNameObj = {
     newsletterCollection: 'subscribe',
     reviewCollection: 'reviews',
     resultCollection: 'results',
+    blogCollection: 'blogs',
 }
 
 const uri = process.env.MONGODB_URI;

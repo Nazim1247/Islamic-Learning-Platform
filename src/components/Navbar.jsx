@@ -1,5 +1,5 @@
 'use client';
-import { FaTachometerAlt, FaUser, FaCog, FaMoon, FaSignOutAlt } from "react-icons/fa";
+import { FaTachometerAlt, FaUser, FaCog, FaMoon, FaSignOutAlt, FaBars } from "react-icons/fa";
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
@@ -27,16 +27,13 @@ const Navbar = () => {
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16" />
-              </svg>
+              
+              <FaBars className="h-6 w-6"/>
             </div>
             <ul tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
               <li><Link className={isActive('/') ? 'text-orange-500 font-semibold' : ''} href="/">Home</Link></li>
-              <li><Link className={isActive('/education') ? 'text-orange-500 font-semibold' : ''} href="/education">Educations</Link></li>
+              <li><Link className={isActive('/education') ? 'text-orange-500 font-semibold' : ''} href="/education">All Classes</Link></li>
               <li><Link className={isActive('/courses') ? 'text-orange-500 font-semibold' : ''} href="/courses">All Courses</Link></li>
               <li><Link className={isActive('/about') ? 'text-orange-500 font-semibold' : ''} href="/about">About</Link></li>
               <li><Link className={isActive('/contact') ? 'text-orange-500 font-semibold' : ''} href="/contact">Contact</Link></li>
@@ -49,7 +46,7 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li><Link className={isActive('/') ? 'text-orange-500 font-semibold' : ''} href="/">Home</Link></li>
-            <li><Link className={isActive('/education') ? 'text-orange-500 font-semibold' : ''} href="/education">Educations</Link></li>
+            <li><Link className={isActive('/education') ? 'text-orange-500 font-semibold' : ''} href="/education">All Classes</Link></li>
             <li><Link className={isActive('/courses') ? 'text-orange-500 font-semibold' : ''} href="/courses">All Courses</Link></li>
             <li><Link className={isActive('/about') ? 'text-orange-500 font-semibold' : ''} href="/about">About</Link></li>
             <li><Link className={isActive('/contact') ? 'text-orange-500 font-semibold' : ''} href="/contact">Contact</Link></li>

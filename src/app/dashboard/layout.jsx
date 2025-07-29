@@ -6,7 +6,8 @@ import { useSession } from 'next-auth/react';
 import { useState } from 'react';
 import {
   FaBars, FaTimes, FaChalkboardTeacher, FaUserGraduate, FaUserCog, FaBookOpen,
-  FaListUl, FaPlus, FaUsers, FaClipboardList, FaChartLine, FaTasks
+  FaListUl, FaPlus, FaUsers, FaClipboardList, FaChartLine, FaTasks,
+  FaBlogger
 } from 'react-icons/fa';
 import { BsFillFileEarmarkSpreadsheetFill } from "react-icons/bs";
 
@@ -27,6 +28,7 @@ const DashboardLayout = ({ children }) => {
     { href: '/dashboard/teacher-registration', label: 'Register Teacher', icon: <FaUserCog /> },
     { href: '/dashboard/student-registration', label: 'Graduates Student Form', icon: <FaUserGraduate /> },
     { href: '/dashboard/result', label: 'Create a Result', icon: <BsFillFileEarmarkSpreadsheetFill /> },
+    { href: '/dashboard/create-blog', label: 'Create a Blog', icon: <FaBlogger /> },
     { href: '/dashboard/manage-courses', label: 'Manage Courses', icon: <FaClipboardList /> },
     { href: '/dashboard/manage-classes', label: 'Manage Classes', icon: <FaListUl /> },
     { href: '/dashboard/manage-users', label: 'Manage Users', icon: <FaUsers /> },
