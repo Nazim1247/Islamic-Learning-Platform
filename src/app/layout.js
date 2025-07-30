@@ -5,6 +5,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import NextAuthProvider from "@/provider/NextAuthProvider";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const geistSans = Geist({
@@ -30,6 +32,7 @@ export default function RootLayout({ children }) {
       >
         <NextAuthProvider>
         <Navbar />
+        <ToastContainer />
         {children}
         <Footer />
         </NextAuthProvider>

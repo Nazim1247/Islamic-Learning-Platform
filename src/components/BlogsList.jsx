@@ -33,7 +33,7 @@ export default function BlogPage() {
   }, []);
 
   return (
-    <div className="">
+    <div className="py-6">
       <h1 className="text-3xl font-bold text-center text-orange-600 mb-6">Islamic Articles & Blogs</h1>
       <p className="text-center text-gray-600 mb-4 max-w-3xl mx-auto">
         Stay informed with short, insightful articles on Islamic lifestyle, rulings, updates, and more — all written by experienced scholars and students of knowledge.
@@ -52,7 +52,7 @@ export default function BlogPage() {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-5">
-                  <h2 className="text-2xl font-bold text-orange-500 mb-2 hover:underline cursor-pointer transition">
+                  <h2 className="text-2xl font-bold text-orange-500 mb-2 transition">
                     {blog.title}
                   </h2>
 
@@ -73,7 +73,7 @@ export default function BlogPage() {
 
                   <button
                     onClick={() => setSelectedBlog(blog)}
-                    className="mt-4 text-sm font-semibold text-red-600 hover:underline"
+                    className="mt-4 text-sm font-semibold text-red-600 hover:underline cursor-pointer"
                   >
                     Read More →
                   </button>
