@@ -30,6 +30,7 @@ const DashboardLayout = ({ children }) => {
     { href: '/dashboard/result', label: 'Create a Result', icon: <BsFillFileEarmarkSpreadsheetFill /> },
     { href: '/dashboard/create-blog', label: 'Create a Blog', icon: <FaBlogger /> },
     { href: '/dashboard/manage-blogs', label: 'Manage Blogs', icon: <FaBlogger /> },
+    { href: '/dashboard/manage-results', label: 'Manage Results', icon: <BsFillFileEarmarkSpreadsheetFill /> },
     { href: '/dashboard/manage-courses', label: 'Manage Courses', icon: <FaClipboardList /> },
     { href: '/dashboard/manage-classes', label: 'Manage Classes', icon: <FaListUl /> },
     { href: '/dashboard/manage-users', label: 'Manage Users', icon: <FaUsers /> },
