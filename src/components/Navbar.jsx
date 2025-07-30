@@ -39,7 +39,12 @@ const Navbar = () => {
               <li><Link className={isActive('/contact') ? 'text-orange-500 font-semibold' : ''} href="/contact">Contact</Link></li>
             </ul>
           </div>
+          <div className="flex items-center gap-2">
+            <Link href={'/'}>
+            <Image src={'/images/logo.jpg'} width={20} height={20} alt="logo" className="w-10 h-10 rounded-full border hover:shadow"/>
+            </Link>
           <Link href="/" className="hidden md:flex font-bold text-xl">Learning Platform</Link>
+          </div>
         </div>
 
         {/* Navbar Center */}

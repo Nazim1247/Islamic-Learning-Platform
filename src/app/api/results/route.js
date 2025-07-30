@@ -21,7 +21,7 @@ export async function POST(req) {
 export async function GET() {
   try {
     const resultCollection = dbConnect(collectionNameObj.resultCollection);
-    const results = await resultCollection.find().toArray();
+    const results = await resultCollection.find().sort({ _id: -1 }).toArray();
 
     return NextResponse.json(results);
   } catch (error) {

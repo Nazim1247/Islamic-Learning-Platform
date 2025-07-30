@@ -48,7 +48,7 @@ const TeachersListSlide = () => {
             <div className="bg-white shadow-lg hover:shadow-xl rounded-md p-4 text-center">
               <Image src={teacher.image} width={200} height={200} alt={teacher.name} className="w-24 h-24 rounded-full mx-auto mb-3" />
               <h3 className="text-xl font-bold">{teacher.name}</h3>
-              <p className="text-blue-500">{teacher.email}</p>
+              <p className="text-orange-500">{teacher.email}</p>
               <p className="text-gray-700 mt-1">{teacher.phone}</p>
               <p className="text-gray-700 mt-1">{teacher.qualification}</p>
               <p className="text-sm text-gray-600">{teacher.teachingSubjects}</p>

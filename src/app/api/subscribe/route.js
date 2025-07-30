@@ -19,3 +19,14 @@ export async function POST(req) {
     return NextResponse.json({ message: "Failed to subscribe" }, { status: 500 });
   }
 }
+
+export async function GET() {
+  try {
+    const subscribeCollection = dbConnect(collectionNameObj.studentCollection);
+
+    const allSubscribes = await subscribeCollection.find().toArray();
+    return NextResponse.json(allSubscribes);
+  } catch (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}

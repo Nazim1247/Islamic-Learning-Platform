@@ -12,6 +12,7 @@ import StudentsPage from "@/components/StudentsList";
 import TeachersList from "@/components/TeachersList";
 import TeachersListSlide from "@/components/TeachersListSlide";
 import TotalReview from "@/components/TotalReview";
+import TotalSubscribes from "@/components/TotalSubscribes";
 import UsersList from "@/components/UsersList";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Slider from "react-slick";
@@ -55,6 +56,9 @@ export default function Home() {
         </div>
         <div>
           <CoursesList />
+        </div>
+        <div>
+          <TotalSubscribes />
         </div>
         </Slider>
 

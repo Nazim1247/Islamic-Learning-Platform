@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper/modules';
+import Link from 'next/link';
 
 export default function HeroSection() {
   const slides = [
@@ -56,9 +57,11 @@ export default function HeroSection() {
       <div className="bg-opacity-50 p-6 rounded-xl text-white text-center max-w-xl">
         <h1 className="text-3xl md:text-5xl font-bold mb-4">{slide.title}</h1>
         <p className="text-lg md:text-xl mb-6">{slide.subtitle}</p>
+        <Link href={'/courses'}>
         <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition">
           {slide.buttonText}
         </button>
+        </Link>
       </div>
     </div>
   </div>
