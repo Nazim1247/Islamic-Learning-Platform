@@ -32,6 +32,7 @@ const DashboardLayout = ({ children }) => {
     { href: '/dashboard/manage-blogs', label: 'Manage Blogs', icon: <FaBlogger /> },
     { href: '/dashboard/manage-results', label: 'Manage Results', icon: <BsFillFileEarmarkSpreadsheetFill /> },
     { href: '/dashboard/manage-courses', label: 'Manage Courses', icon: <FaClipboardList /> },
+    { href: '/dashboard/manage-gr-students', label: 'Manage GR Students', icon: <FaUserGraduate /> },
     { href: '/dashboard/manage-classes', label: 'Manage Classes', icon: <FaListUl /> },
     { href: '/dashboard/manage-users', label: 'Manage Users', icon: <FaUsers /> },
     { href: '/dashboard/site-analytics', label: 'Site Analytics', icon: <FaChartLine /> },
@@ -84,7 +85,7 @@ const DashboardLayout = ({ children }) => {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`flex items-center gap-2 px-4 py-2 rounded hover:bg-orange-100 transition ${
+                  className={`flex items-center gap-2 px-4 py-1 rounded hover:bg-orange-100 transition ${
                     isActive(link.href) ? 'text-orange-600 font-semibold bg-orange-50' : 'text-gray-700'
                   }`}
                 >
