@@ -34,6 +34,7 @@ const DashboardLayout = ({ children }) => {
     { href: '/dashboard/manage-courses', label: 'Manage Courses', icon: <FaClipboardList /> },
     { href: '/dashboard/manage-gr-students', label: 'Manage GR Students', icon: <FaUserGraduate /> },
     { href: '/dashboard/manage-classes', label: 'Manage Classes', icon: <FaListUl /> },
+    { href: '/dashboard/manage-reviews', label: 'Manage Reviews', icon: <FaListUl /> },
     { href: '/dashboard/manage-users', label: 'Manage Users', icon: <FaUsers /> },
     { href: '/dashboard/site-analytics', label: 'Site Analytics', icon: <FaChartLine /> },
   ];
