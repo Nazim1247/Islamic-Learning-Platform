@@ -58,7 +58,7 @@ const ReviewList = () => {
                     alt={review.name}
                     width={70}
                     height={70}
-                    className="rounded-full object-cover border border-gray-300"
+                    className="w-18 h-18 rounded-full object-cover border border-gray-300"
                   />
                   <div className="text-left">
                     <h3 className="text-lg font-semibold text-gray-800">{review.name}</h3>

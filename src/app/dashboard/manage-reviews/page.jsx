@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { FaTrash } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function ManageReviews() {
   const router = useRouter();
@@ -59,7 +60,10 @@ export default function ManageReviews() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((review) => (
             <div key={review._id} className="bg-white shadow-md p-4 rounded relative">
-              <h3 className="text-lg font-semibold text-green-700">{review.name}</h3>
+                <div className='flex items-center gap-2'>
+                    <Image src={review.image} width={20} height={20} alt='image' className='w-8 h-8 rounded-full'/>
+              <h3 className="text-lg font-semibold text-orange-500">{review.name}</h3>
+                </div>
               <p className="text-sm text-gray-600">{review.email}</p>
               <p className="text-sm text-gray-600">{review.comment}</p>
               <p className="text-xs text-gray-500 mt-2">Rating: {review.rating}/5</p>
