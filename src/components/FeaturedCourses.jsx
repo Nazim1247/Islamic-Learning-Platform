@@ -46,9 +46,9 @@ const FeaturedCourses = () => {
       </h2>
       <p className="text-center text-gray-600 mb-8 max-w-4xl mx-auto">Explore our most popular and high-quality Islamic courses carefully selected to help you grow in knowledge and spirituality. Learn Qur’an, Hadith, Fiqh, Arabic, and more – all from experienced scholars.</p>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {courses.map((course) => (
-          <div key={course._id} className="p-3">
+          <div key={course._id}>
             <div className="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition-all space-y-2">
   {course.image && (
   <Image
@@ -144,37 +144,3 @@ const FeaturedCourses = () => {
 };
 
 export default FeaturedCourses;
-
-
-// "use client";
-// import { useEffect, useState } from "react";
-
-// const FeaturedCourses = () => {
-//   const [courses, setCourses] = useState([]);
-
-//   useEffect(() => {
-//     fetch("/api/courses")
-//       .then((res) => res.json())
-//       .then((data) => setCourses(data));
-//   }, []);
-
-//   return (
-//     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-//       {courses.map((course) => (
-//         <div key={course._id} className="bg-white shadow-lg p-4 rounded-lg">
-//           <h3 className="text-xl font-bold text-gray-800">{course.title}</h3>
-//           <p className="text-gray-600 mb-2">{course.description}</p>
-//           <p className="text-sm text-gray-700 mb-2">{course.details}</p>
-//           <ul className="text-sm text-gray-700 list-disc list-inside mb-2 space-y-1">
-//             {course.features?.map((item, idx) => (
-//               <li key={idx}>{item}</li>
-//             ))}
-//           </ul>
-//           <p className="text-orange-600 font-semibold">💰 {course.price || "৳1500/month"}</p>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default FeaturedCourses;

@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
 
 const ReviewList = () => {
@@ -15,8 +13,11 @@ const ReviewList = () => {
       try {
         const res = await fetch("/api/reviews");
         const data = await res.json();
-        // console.log("Fetched Reviews Data:", data);
+        if (Array.isArray(data)) {
         setReviews(data);
+      } else {
+        console.error("Invalid data format:", data);
+      }
       } catch (err) {
         console.error("Failed to load reviews", err);
       }
@@ -55,7 +56,7 @@ const ReviewList = () => {
               <div className="bg-gray-100 rounded-xl p-6 shadow-md hover:shadow-lg transition-all h-full">
                 <div className="flex items-center gap-4 mb-3">
                   <Image
-                    src={review.image || "/images/user.png"}
+                    src={review.image}
                     alt={review.name}
                     width={70}
                     height={70}

@@ -1,6 +1,8 @@
 'use client';
+
 import { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 export default function UpdateProfileForm() {
   const { data: session } = useSession();
@@ -13,7 +15,8 @@ export default function UpdateProfileForm() {
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
-
+  const [showPassword, setShowPassword] = useState(false);
+  
   useEffect(() => {
     if (session?.user) {
       setFormData({
@@ -50,7 +53,10 @@ export default function UpdateProfileForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4 p-6 bg-white shadow rounded mt-20 mb-4">
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-md mx-auto space-y-4 p-6 bg-white shadow rounded mt-20 mb-4"
+    >
       <h2 className="text-xl font-bold text-center text-orange-500">Update Profile</h2>
 
       <input
@@ -72,16 +78,29 @@ export default function UpdateProfileForm() {
         onChange={handleChange}
       />
 
-      <input
-        name="password"
-        type="password"
-        placeholder="New Password (optional)"
-        className="input input-bordered w-full"
-        value={formData.password}
-        onChange={handleChange}
-      />
+      {/* Password Field with Toggle Icon */}
+      <div className="relative">
+        <input
+          name="password"
+          type={showPassword ? 'text' : 'password'}
+          placeholder="New Password (optional)"
+          className="input input-bordered w-full pr-10"
+          value={formData.password}
+          onChange={handleChange}
+        />
+        <span
+          onClick={() => setShowPassword(!showPassword)}
+          className="absolute right-3 top-3 cursor-pointer text-gray-600 text-lg"
+        >
+          {showPassword ? <FiEyeOff /> : <FiEye />}
+        </span>
+      </div>
 
-      <button type="submit" className="btn btn-primary w-full" disabled={loading}>
+      <button
+        type="submit"
+        className="btn bg-orange-500 hover:bg-orange-600 text-white rounded w-full"
+        disabled={loading}
+      >
         {loading ? 'Updating...' : 'Update Profile'}
       </button>
 
