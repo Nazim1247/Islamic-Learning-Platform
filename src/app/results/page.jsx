@@ -1,49 +1,32 @@
 'use client';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FaUserGraduate, FaChalkboardTeacher, FaListOl, FaFileAlt } from "react-icons/fa";
-import Slider from 'react-slick';
 
-export default function ResultsList() {
+const ResultsPage = () => {
     const [results, setResults] = useState([]);
-    const settings = {
-    dots: true,
-    infinite: true,
-    speed: 200,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
-    ],
-  };
 
-  useEffect(() => {
+    useEffect(() => {
     const fetchResults = async () => {
-      const res = await fetch('/api/results');
+      const res = await fetch('/api/results/all-results');
       const data = await res.json();
       setResults(data);
     };
     fetchResults();
   }, []);
 
-  return (
-    <div className='my-8'>
+    return (
+        <div className='mt-20 max-w-[1250px] mx-auto p-4'>
         <h1 className="text-3xl font-bold text-center text-orange-500 mb-2">
-        Student Results
+        All Student Results
         </h1>
         <p className="text-center text-gray-600 mb-4 max-w-3xl mx-auto">
         Browse through the academic performance of our students. Each result card contains essential details including name, class, roll, and final outcome.
         </p>
-
-    <div className="p-4 -mx-2">
-  <Slider {...settings}>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
     {results.map((result) => (
-      <div key={result?._id} className="px-2">
-        <div className="bg-white shadow-md rounded-xl p-5 hover:shadow-lg transition-all duration-300 mb-4">
+      
+        <div key={result?._id} className="bg-white shadow-md rounded-xl p-5 hover:shadow-lg transition-all duration-300">
           <Image
             src={result.imageUrl}
             alt={result.name}
@@ -67,18 +50,11 @@ export default function ResultsList() {
             Result: <span className="font-medium">{result.result}</span>
           </p>
         </div>
-      </div>
+     
     ))}
-  </Slider>
-</div>
-
-<div className='text-center mt-4'>
-  <Link href="/results">
-    <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded shadow transition animate-pulse">
-      See All Results
-    </button>
-  </Link>
-</div>
     </div>
-  );
-}
+    </div>
+    );
+};
+
+export default ResultsPage;

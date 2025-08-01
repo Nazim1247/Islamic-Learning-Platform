@@ -1,29 +1,14 @@
 'use client';
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaUserGraduate, FaMapMarkerAlt, FaBriefcase, FaGraduationCap } from "react-icons/fa";
-import Slider from "react-slick";
 
 export default function StudentsPage() {
   const [students, setStudents] = useState([]);
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 200,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
-    ],
-  };
 
   useEffect(() => {
     const fetchStudents = async () => {
-      const res = await fetch("/api/students");
+      const res = await fetch("/api/students/all-students");
       const data = await res.json();
       setStudents(data);
     };
@@ -31,7 +16,7 @@ export default function StudentsPage() {
   }, []);
 
   return (
-    <div className="px-4 pb-8">
+    <div className="mt-20 max-w-[1250px] mx-auto p-4">
       <h1 className="text-3xl font-bold text-center text-orange-500 mb-2">
         Our Proud Graduates
       </h1>
@@ -39,11 +24,9 @@ export default function StudentsPage() {
         Our students who have completed their studies from this institution are now shining across the globe in various fields. We proudly present some of their remarkable achievements.
       </p>
 
-      <div className="p-4 -mx-2">
-        <Slider {...settings}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {students.map((student) => (
-          <div key={student._id} className="px-2">
-            <div className="bg-white shadow-md rounded-lg p-5 hover:shadow-xl transition duration-300 mb-4">
+            <div key={student._id} className="bg-white shadow-md rounded-lg p-5 hover:shadow-xl transition duration-300">
             <Image
               src={student?.image}
               width={200}
@@ -69,18 +52,8 @@ export default function StudentsPage() {
             </p>
             
           </div>
-          </div>
         ))}
-        </Slider>
       </div>
-
-      <div className='text-center mt-4'>
-  <Link href="/students">
-    <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded shadow transition animate-pulse">
-      See All Students
-    </button>
-  </Link>
-</div>
     </div>
   );
 }

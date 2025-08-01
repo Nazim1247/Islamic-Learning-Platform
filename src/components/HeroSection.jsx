@@ -46,7 +46,7 @@ export default function HeroSection() {
       className="absolute inset-0 bg-cover bg-center"
       style={{
         backgroundImage: `url(${slide.image})`,
-        filter: 'blur(4px) brightness(0.5)',
+        filter: 'blur(3px) brightness(0.5)',
         transform: 'scale(1.05)',
         zIndex: 0,
       }}

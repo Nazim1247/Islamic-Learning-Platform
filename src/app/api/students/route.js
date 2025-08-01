@@ -19,7 +19,7 @@ export async function POST(req) {
 
 export async function GET(request) {
   try {
-    const students = await dbConnect(collectionNameObj.studentCollection).find().toArray();
+    const students = await dbConnect(collectionNameObj.studentCollection).find().sort({ _id: -1 }).limit(3).toArray();
 
     return new NextResponse(JSON.stringify(students), {
       status: 200,
