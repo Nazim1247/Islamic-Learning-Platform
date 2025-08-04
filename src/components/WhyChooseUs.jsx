@@ -71,17 +71,17 @@ const WhyChooseUs = () => {
     <section className="pb-8">
       <div className="px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-4">Why Choose Us?</h2>
-        <p className="text-gray-600 mb-8 px-4 max-w-5xl mx-auto">
+        <p className="text-gray-600 dark:text-gray-400 mb-8 px-4 max-w-5xl mx-auto">
           Discover how our Islamic Learning Platform blends traditional scholarship with flexible online education to serve students around the world. With expert teachers, one-on-one support, and a wide range of courses — we aim to make authentic Islamic knowledge accessible, affordable, and deeply impactful for everyone.
         </p>
 
         <Slider {...settings}>
           {features.map((feature, index) => (
             <div key={index} className="p-4">
-              <div className="bg-white rounded-2xl shadow-md p-6 h-[200px] flex flex-col justify-start items-center hover:shadow-lg transition-all duration-300">
+              <div className="bg-color dark:bg-gray-900 rounded-2xl shadow-md p-6 h-[200px] flex flex-col justify-start items-center hover:shadow-lg transition-all duration-300">
                 <div className="text-4xl mb-3">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
-                <p className="text-gray-600 text-sm line-clamp-4">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-orange-500 mb-2">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-4">{feature.description}</p>
               </div>
             </div>
           ))}

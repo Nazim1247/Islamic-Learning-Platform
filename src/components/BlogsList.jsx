@@ -35,7 +35,7 @@ export default function BlogPage() {
   return (
     <div className="py-6">
       <h1 className="text-3xl font-bold text-center text-orange-600 mb-6">Islamic Articles & Blogs</h1>
-      <p className="text-center text-gray-600 mb-4 max-w-3xl mx-auto">
+      <p className="text-center text-gray-600 dark:text-gray-400 mb-4 max-w-3xl mx-auto">
         Stay informed with short, insightful articles on Islamic lifestyle, rulings, updates, and more — all written by experienced scholars and students of knowledge.
       </p>
 
@@ -43,7 +43,7 @@ export default function BlogPage() {
         <Slider {...settings}>
           {blogs.map((blog) => (
             <div key={blog._id} className='px-4'>
-              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <div className="bg-color rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <Image
                   src={blog?.image}
                   width={400}
@@ -56,7 +56,7 @@ export default function BlogPage() {
                     {blog.title}
                   </h2>
 
-                  <div className="flex items-center text-gray-500 text-sm mb-3 space-x-4">
+                  <div className="flex items-center text-gray-500 dark:text-gray-300 text-sm mb-3 space-x-4">
                     <div className="flex items-center gap-1">
                       <FaUserAlt className="text-green-600" />
                       <span>{blog.author}</span>
@@ -67,7 +67,7 @@ export default function BlogPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-gray-700 dark:text-gray-400 leading-relaxed">
                     {blog.content?.slice(0, 150)}...
                   </p>
 

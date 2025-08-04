@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
 import Image from 'next/image';
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -20,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-white">
+    <div className="bg-white dark:bg-base-200 fixed top-0 left-0 w-full z-50">
       <div className="navbar shadow-sm max-w-[1250px] mx-auto px-4 py-2">
 
         {/* Navbar Start */}
@@ -73,41 +74,36 @@ const Navbar = () => {
                   />
                 </div>
               </div>
-              <ul tabIndex={0} className="mt-3 z-[99] p-2 shadow menu menu-sm dropdown-content bg-white rounded-box w-52">
+              <ul tabIndex={0} className="mt-3 z-[99] p-2 shadow menu menu-sm dropdown-content bg-color rounded-box w-52">
                 <li>
-        <button onClick={goToDashboard} className="flex items-center gap-2 hover:bg-orange-100 px-3 py-2 rounded-md">
+        <button onClick={goToDashboard} className="flex items-center gap-2 hover:bg-gray-400 px-3 py-2 rounded-md">
           <FaTachometerAlt /> Dashboard
         </button>
       </li>
       <li>
-        <Link href="/profile" className="flex items-center gap-2 hover:bg-orange-100 px-3 py-2 rounded-md">
+        <Link href="/profile" className="flex items-center gap-2 hover:bg-gray-400 px-3 py-2 rounded-md">
           <FaUser /> Profile
         </Link>
       </li>
       
       <li>
       <details>
-          <summary className="flex items-center gap-2 hover:bg-orange-100 px-3 py-2 rounded-md"><FaCog /> Settings</summary>
+          <summary className="flex items-center gap-2 hover:bg-gray-400 px-3 py-2 rounded-md"><FaCog /> Settings</summary>
           <ul className="bg-base-100 rounded-t-none p-2">
             <li>
-              <Link href="/profile/update-profile" className="flex items-center gap-2 hover:bg-orange-100 px-3 py-2 rounded-md"> 
+              <Link href="/profile/update-profile" className="flex items-center gap-2 hover:bg-gray-400 px-3 py-2 rounded-md"> 
               Update Profile
               </Link>
               </li>
-            <li><a>Link 2</a></li>
+            
           </ul>
         </details>
         </li>
       <li>
-        <label className="flex items-center justify-between hover:bg-orange-100 px-3 py-2 rounded-md cursor-pointer">
+        <label className="flex items-center justify-between hover:bg-gray-400 px-3 py-2 rounded-md cursor-pointer">
           <span className="flex items-center gap-2">
-            <FaMoon /> Dark Mode
+            <FaMoon /> <ThemeToggle />
           </span>
-          <input
-            type="checkbox"
-            className="toggle toggle-sm"
-            
-          />
         </label>
       </li>
       <li>

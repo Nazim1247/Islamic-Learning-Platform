@@ -35,7 +35,7 @@ export default function ResultsList() {
         <h1 className="text-3xl font-bold text-center text-orange-500 mb-2">
         Student Results
         </h1>
-        <p className="text-center text-gray-600 mb-4 max-w-3xl mx-auto">
+        <p className="text-center text-gray-600 dark:text-gray-400 mb-4 max-w-3xl mx-auto">
         Browse through the academic performance of our students. Each result card contains essential details including name, class, roll, and final outcome.
         </p>
 
@@ -43,7 +43,7 @@ export default function ResultsList() {
   <Slider {...settings}>
     {results.map((result) => (
       <div key={result?._id} className="px-2">
-        <div className="bg-white shadow-md rounded-xl p-5 hover:shadow-lg transition-all duration-300 mb-4">
+        <div className="bg-color shadow-md rounded-xl p-5 hover:shadow-lg transition-all duration-300 mb-4">
           <Image
             src={result.imageUrl}
             alt={result.name}
@@ -54,15 +54,15 @@ export default function ResultsList() {
             <FaUserGraduate className="text-blue-600" />
             {result.name}
           </h2>
-          <p className="text-gray-700 flex items-center gap-2 mt-2">
+          <p className="text-gray-700 dark:text-gray-400 flex items-center gap-2 mt-2">
             <FaChalkboardTeacher className="text-green-600" />
             Class: <span className="font-medium">{result.class}</span>
           </p>
-          <p className="text-gray-700 flex items-center gap-2 mt-1">
+          <p className="text-gray-700 dark:text-gray-400 flex items-center gap-2 mt-1">
             <FaListOl className="text-purple-600" />
             Roll: <span className="font-medium">{result.roll}</span>
           </p>
-          <p className="text-gray-700 flex items-center gap-2 mt-1">
+          <p className="text-gray-700 dark:text-gray-400 flex items-center gap-2 mt-1">
             <FaFileAlt className="text-orange-600" />
             Result: <span className="font-medium">{result.result}</span>
           </p>

@@ -43,12 +43,12 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-8 bg-white" id="faqs">
+    <section className="pb-8 bg-color" id="faqs">
       <div className="px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-4">
           FAQs – Frequently Asked Questions
         </h2>
-        <p className="text-center text-gray-600 mb-10">
+        <p className="text-center text-gray-600 dark:text-gray-400 mb-10">
           Find answers to the most commonly asked questions about our courses and learning experience.
         </p>
 
@@ -60,7 +60,7 @@ const FAQSection = () => {
               onClick={() => toggleFAQ(index)}
             >
               <div className="flex justify-between items-center">
-                <h3 className="text-lg font-semibold text-gray-800">{faq.question}</h3>
+                <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-400">{faq.question}</h3>
                 <span className="text-2xl text-gray-500">
                   {openIndex === index ? "−" : "+"}
                 </span>

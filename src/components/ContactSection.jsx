@@ -28,27 +28,27 @@ const ContactSection = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-4">
           Contact & Newsletter
         </h2>
-        <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+        <p className="text-center text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto">
           Have questions or want to stay updated with our latest Islamic courses, articles, and events? Reach out to us or subscribe below!
         </p>
 
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-semibold text-gray-700 mb-4">📞 Contact Information</h3>
-            <p className="text-gray-600 mb-4">
+            <h3 className="text-xl font-semibold text-orange-500 mb-4">📞 Contact Information</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
               📍 Address: Online Islamic Learning Platform <br />
               🌐 Location: Global (Bangladesh, UK, USA, Gulf & more)
             </p>
-            <p className="text-gray-600 mb-4">📧 Email: mdnajim1247@gmail.com</p>
-            <p className="text-gray-600 mb-4">📱 WhatsApp: +8801924772057</p>
-            <p className="text-gray-600">🕐 Support Hours: 9 AM – 9 PM (GMT+6)</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">📧 Email: mdnajim1247@gmail.com</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">📱 WhatsApp: +8801924772057</p>
+            <p className="text-gray-600 dark:text-gray-400">🕐 Support Hours: 9 AM – 9 PM (GMT+6)</p>
           </div>
 
           {/* Newsletter Form */}
           <div>
-            <h3 className="text-xl font-semibold text-gray-700 mb-2">📰 Subscribe to Our Newsletter</h3>
-            <p className="text-gray-600 mb-2">
+            <h3 className="text-xl font-semibold text-orange-500 mb-2">📰 Subscribe to Our Newsletter</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-2">
               Receive weekly reminders, Islamic articles, and course updates directly to your inbox.
             </p>
             <form onSubmit={handleSubscribe} className="flex flex-col space-y-2">
