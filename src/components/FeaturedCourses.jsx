@@ -130,7 +130,7 @@ const FeaturedCourses = () => {
         💰 Price: {selectedCourse.price}
       </p>
 
-      <Link href={'https://forms.gle/BFpqxvtB36Wn5wF46'} target="_blank">
+      <Link href={'/enroll'}>
       <button className="bg-orange-500 hover:bg-orange-600 text-white w-full py-2 rounded-xl transition animate-pulse">
         Enroll Now
       </button>

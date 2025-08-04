@@ -10,6 +10,7 @@ export const collectionNameObj = {
     reviewCollection: 'reviews',
     resultCollection: 'results',
     blogCollection: 'blogs',
+    enrollmentCollection: 'enrollments',
 }
 
 const uri = process.env.MONGODB_URI;
