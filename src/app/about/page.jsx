@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
   return (
     <div className=''>
-      <section className="pt-20 px-4 md:px-10 bg-white text-gray-800 max-w-5xl mx-auto shadow rounded-2xl">
+      <section className="pt-20 px-4 md:px-10 bg-color text-gray-800 dark:text-gray-400 max-w-5xl mx-auto shadow rounded-2xl">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-orange-600">About Us</h2>
           <p className="text-lg mb-8">
@@ -12,32 +12,32 @@ const About = () => {
 
           {/* Academy Overview */}
           <div className="mb-10 text-center">
-            <h3 className="text-2xl font-semibold mb-2 text-gray-700">🏫 Academy Overview</h3>
-            <p className="text-base text-gray-600">
+            <h3 className="text-2xl font-semibold mb-2 text-orange-500">🏫 Academy Overview</h3>
+            <p className="text-base text-gray-600 dark:text-gray-400">
               Founded by scholars and educators with a passion for spreading Islamic knowledge, our academy offers live online classes, pre-recorded courses, and personalized mentoring programs. We use modern technology to make learning Islam easy, engaging, and practical.
             </p>
           </div>
 
           {/* Mission */}
           <div className="mb-8 text-center">
-            <h3 className="text-2xl font-semibold mb-2 text-gray-700">📌 Our Mission</h3>
-            <p className="text-base text-gray-600">
+            <h3 className="text-2xl font-semibold mb-2 text-orange-500">📌 Our Mission</h3>
+            <p className="text-base text-gray-600 dark:text-gray-400">
               To spread Islamic knowledge across generations by providing Quran- and Hadith-based education. We want to present the timeless beauty of Islam using modern tools in a way that resonates with youth and adults alike.
             </p>
           </div>
 
           {/* Vision */}
           <div className="mb-10 text-center">
-            <h3 className="text-2xl font-semibold mb-2 text-gray-700">🎯 Our Vision</h3>
-            <p className="text-base text-gray-600">
+            <h3 className="text-2xl font-semibold mb-2 text-orange-500">🎯 Our Vision</h3>
+            <p className="text-base text-gray-600 dark:text-gray-400">
               To build a global hub of authentic Islamic learning that connects people to the Qur’an, Sunnah, and traditional knowledge—accessible from anywhere, at any time.
             </p>
           </div>
 
           {/* Key Features */}
           <div className="mb-10 text-center">
-            <h3 className="text-2xl font-semibold mb-2 text-gray-700">🌟 Key Features</h3>
-            <ul className="list-disc list-inside text-gray-600 space-y-1 md:flex">
+            <h3 className="text-2xl font-semibold mb-2 text-orange-500">🌟 Key Features</h3>
+            <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-1 md:flex">
               <li>Live Zoom classes with experienced teachers</li>
               <li>One-on-one Quran tutoring</li>
               <li>Certified Islamic curriculum</li>
@@ -49,30 +49,30 @@ const About = () => {
 
           {/* Why Choose Us */}
           <div className="mb-10 text-center">
-            <h3 className="text-2xl font-semibold mb-2 text-gray-700">💡 Why Choose Us?</h3>
-            <p className="text-base text-gray-600">
+            <h3 className="text-2xl font-semibold mb-2 text-orange-500">💡 Why Choose Us?</h3>
+            <p className="text-base text-gray-600 dark:text-gray-400">
               We are committed to authentic knowledge, compassionate teaching, and personalized attention. Our academy stands out for its highly qualified scholars, responsive support team, and deep focus on practical Islamic learning.
             </p>
           </div>
 
           {/* Teachers */}
           <div className="mb-10 text-center">
-            <h3 className="text-2xl font-semibold mb-2 text-gray-700">👨‍🏫 Our Teachers</h3>
-            <p className="text-base text-gray-600">
+            <h3 className="text-2xl font-semibold mb-2 text-orange-500">👨‍🏫 Our Teachers</h3>
+            <p className="text-base text-gray-600 dark:text-gray-400">
               Our team includes certified Hafiz, Alim, and Islamic scholars with years of experience in teaching Qur’an, Arabic grammar, Tafsir, and Hadith. Many are graduates from prestigious Islamic universities and institutions.
             </p>
           </div>
 
           {/* Students */}
           <div className="mb-10 text-center">
-            <h3 className="text-2xl font-semibold mb-2 text-gray-700">🧒👩‍🎓 Our Students</h3>
-            <p className="text-base text-gray-600">
+            <h3 className="text-2xl font-semibold mb-2 text-orange-500">🧒👩‍🎓 Our Students</h3>
+            <p className="text-base text-gray-600 dark:text-gray-400">
               Students from over 15 countries have joined our platform, including children, working professionals, and reverts. We serve both beginners and advanced learners with care and dedication.
             </p>
           </div>
 
           {/* Quran or Hadith */}
-          <div className="mt-8 bg-gray-100 p-6 rounded-lg shadow">
+          <div className="mt-8 bg-color p-6 rounded-lg shadow">
             <p className="italic text-lg text-gray-700 mb-2 text-center">
               <span className="text-orange-600 font-semibold">
                 قَدْ أَفْلَحَ مَن تَزَكَّىٰ ﴿١٤﴾ وَذَكَرَ ٱسْمَ رَبِّهِ فَصَلَّىٰ ﴿١٥﴾

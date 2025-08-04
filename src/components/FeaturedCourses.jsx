@@ -44,12 +44,12 @@ const FeaturedCourses = () => {
       <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-4">
         Featured Courses
       </h2>
-      <p className="text-center text-gray-600 mb-8 max-w-4xl mx-auto">Explore our most popular and high-quality Islamic courses carefully selected to help you grow in knowledge and spirituality. Learn Qur’an, Hadith, Fiqh, Arabic, and more – all from experienced scholars.</p>
+      <p className="text-center text-gray-600 dark:text-gray-400 mb-8 max-w-4xl mx-auto">Explore our most popular and high-quality Islamic courses carefully selected to help you grow in knowledge and spirituality. Learn Qur’an, Hadith, Fiqh, Arabic, and more – all from experienced scholars.</p>
 
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {courses.map((course) => (
           <div key={course._id}>
-            <div className="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition-all space-y-2">
+            <div className="bg-color rounded-2xl shadow-md p-4 hover:shadow-xl transition-all space-y-2">
   {course.image && (
   <Image
     src={course.image}
@@ -60,11 +60,11 @@ const FeaturedCourses = () => {
     loading="lazy"
   />
 )}  
-  <h3 className="text-xl font-bold text-gray-800">{course.title}</h3>
-  <p className="text-gray-600 text-sm">{course.description}</p>
+  <h3 className="text-xl font-bold text-orange-500">{course.title}</h3>
+  <p className="text-gray-600 dark:text-gray-300 text-sm">{course.description}</p>
 
-  <p className="text-sm text-gray-700"><span className="font-medium">Instructor:</span> {course.instructor}</p>
-  <p className="text-sm text-gray-700"><span className="font-medium">Duration:</span> {course.duration}</p>
+  <p className="text-sm text-gray-700 dark:text-gray-400"><span className="font-medium">Instructor:</span> {course.instructor}</p>
+  <p className="text-sm text-gray-700 dark:text-gray-400"><span className="font-medium">Duration:</span> {course.duration}</p>
   
   <div className="flex flex-wrap gap-1 text-xs">
     {course.features?.map((f, i) => (

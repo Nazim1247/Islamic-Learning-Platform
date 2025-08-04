@@ -80,14 +80,14 @@ const DashboardLayout = ({ children }) => {
 
       <div className='flex flex-col md:flex-row gap-4 mt-6'>
         {/* Sidebar */}
-        <aside className={`md:w-1/5 md:border-r w-full md:block ${isSidebarOpen ? 'block' : 'hidden'} bg-white md:bg-transparent shadow md:shadow-none rounded`}>
+        <aside className={`md:w-1/5 md:border-r w-full md:block ${isSidebarOpen ? 'block' : 'hidden'} bg-color shadow md:shadow-none rounded`}>
           <h3 className='text-lg font-semibold text-orange-500 mb-4 capitalize'>{userRole} Menu</h3>
           <ul className='space-y-2'>
             {getSidebarLinks().map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`flex items-center gap-2 px-4 py-1 rounded hover:bg-orange-100 transition ${
+                  className={`flex items-center gap-2 px-4 py-1 rounded hover:bg-gray-700 dark:text-gray-500 transition ${
                     isActive(link.href) ? 'text-orange-600 font-semibold bg-orange-50' : 'text-gray-700'
                   }`}
                 >
@@ -100,7 +100,7 @@ const DashboardLayout = ({ children }) => {
         </aside>
 
         {/* Main Content */}
-        <main className='md:w-4/5 w-full bg-gray-100 p-4 rounded shadow'>
+        <main className='md:w-4/5 w-full p-4 rounded shadow'>
           {children}
         </main>
       </div>
