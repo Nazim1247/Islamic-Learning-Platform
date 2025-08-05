@@ -87,8 +87,8 @@ const DashboardLayout = ({ children }) => {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`flex items-center gap-2 px-4 py-1 rounded hover:bg-gray-700 hover:text-white dark:text-gray-500 transition ${
-                    isActive(link.href) ? 'text-orange-600 font-semibold bg-orange-50' : 'text-gray-700'
+                  className={`flex items-center gap-2 px-4 py-1 rounded hover:bg-gray-700 hover:text-orange-500 transition ${
+                    isActive(link.href) ? 'text-orange-600 font-semibold' : ''
                   }`}
                 >
                   <span className="text-lg">{link.icon}</span>

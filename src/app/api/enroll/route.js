@@ -1,4 +1,6 @@
+import { authOptions } from '@/lib/authOptions';
 import dbConnect, { collectionNameObj } from '@/lib/dbConnect';
+import { getServerSession } from 'next-auth';
 import { NextResponse } from 'next/server';
 
 export async function POST(req) {
@@ -17,3 +19,17 @@ export async function POST(req) {
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
+
+export const GET = async () => {
+  const session = await getServerSession(authOptions);
+  const email = session?.user?.email;
+
+  if (!email) {
+    return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+  }
+
+  const enrollmentCollection = dbConnect(collectionNameObj.enrollmentCollection);
+  const enrollments = await enrollmentCollection.find({ email }).toArray();
+
+  return NextResponse.json(enrollments);
+};
