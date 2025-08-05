@@ -1,19 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const CreateClassForm = () => {
-  const [classData, setClassData] = useState({
-    className: "",
-    books: "",
-    teachers: [{ name: "", subject: "" }],
-    students: "",
-    time: "",
-    days: [],
-    location: "",
-    notes: "",
-    admitFee: "",
-    monthlyFee: "",
+  const [
+    classData, setClassData] = useState({className: "",books: "",teachers: [{ name: "", subject: "" }],students: "",time: "",days: [],location: "",notes: "",admitFee: "",monthlyFee: "",
   });
 
   const daysList = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
@@ -46,27 +38,17 @@ const CreateClassForm = () => {
 
     const result = await response.json();
     if (result.success) {
-      alert("Class created successfully!");
-      setClassData({
-        className: "",
-        books: "",
-        teachers: [{ name: "", subject: "" }],
-        students: "",
-        time: "",
-        days: [],
-        location: "Online",
-        notes: "",
-        admitFee: "",
-        monthlyFee: "",
+      toast.success("Class created successfully!");
+      setClassData({className: "",books: "",teachers: [{ name: "", subject: "" }],students: "",time: "",days: [],location: "Online",notes: "",admitFee: "",monthlyFee: "",
       });
     } else {
-      alert("Error creating class.");
+      toast.error("Error creating class.");
     }
   };
 
   return (
     <div id="class">
-    <form onSubmit={handleSubmit} className="max-w-3xl mx-auto p-4 bg-white shadow rounded space-y-4">
+    <form onSubmit={handleSubmit} className="max-w-3xl mx-auto p-4 bg-color shadow rounded space-y-4">
       <h2 className="text-xl md:text-3xl font-bold text-center text-orange-600 mb-4">Create a New Class</h2>
 
       <input

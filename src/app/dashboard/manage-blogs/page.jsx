@@ -27,41 +27,74 @@ export default function ManageBlogs() {
   }, []);
 
   // Delete blog
-  const handleDelete = async (id) => {
-  const confirm = window.confirm('Are you sure you want to delete this blog?');
-  if (!confirm) return;
+const handleDelete = async (id) => {
+  toast((t) => (
+    <span>
+      Are you sure you want to delete this blog?
+      <br />
+      <button
+        onClick={async () => {
+          toast.dismiss(t.id);
+          try {
+            const res = await fetch(`/api/blog/${id}`, {
+              method: 'DELETE',
+            });
 
-  try {
-    const res = await fetch(`/api/blog/${id}`, {
-      method: 'DELETE',
-    });
+            const data = await res.json();
 
-    const data = await res.json();
+            if (res.ok) {
+              setBlogs(prev => prev.filter(blog => blog._id !== id));
+              toast.success(data.message || 'Blog deleted successfully');
+            } else {
+              toast.error(data.message || 'Failed to delete blog');
+            }
+          } catch (error) {
+            console.error('Delete error:', error);
+            toast.error('Something went wrong');
+          }
+        }}
+        style={{
+          margin: '5px',
+          padding: '5px 10px',
+          background: 'red',
+          color: 'white',
+          borderRadius: '4px',
+          cursor: 'pointer',
+        }}
+      >
+        Yes, Delete
+      </button>
 
-    if (res.ok) {
-      setBlogs(prev => prev.filter(blog => blog._id !== id));
-      toast.success(data.message || 'Blog deleted successfully');
-    } else {
-      toast.error(data.message || 'Failed to delete blog');
-    }
-  } catch (error) {
-    console.error('Delete error:', error);
-    toast.error('Something went wrong');
-  }
+      <button
+        onClick={() => toast.dismiss(t.id)}
+        style={{
+          margin: '5px',
+          padding: '5px 10px',
+          background: 'gray',
+          color: 'white',
+          borderRadius: '4px',
+          cursor: 'pointer',
+        }}
+      >
+        Cancel
+      </button>
+    </span>
+  ), { duration: 10000 });
 };
+
 
   return (
     <div className="">
       <h2 className="text-3xl font-bold text-center text-orange-600 mb-6">Manage Blogs</h2>
 
       {loading ? (
-        <p className="text-center text-gray-600">Loading blogs...</p>
+        <p className="text-center text-gray-400">Loading blogs...</p>
       ) : blogs.length === 0 ? (
-        <p className="text-center text-gray-500">No blogs found.</p>
+        <p className="text-center text-gray-400">No blogs found.</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {blogs.map((blog) => (
-            <div key={blog._id} className="bg-white rounded shadow-md p-4 relative group">
+            <div key={blog._id} className="bg-color rounded shadow-md p-4 relative group">
               <Image
                 src={blog.image}
                 width={400}
@@ -70,8 +103,8 @@ export default function ManageBlogs() {
                 className="w-full h-40 object-cover rounded mb-3"
               />
               <h3 className="text-xl font-semibold text-orange-500">{blog.title}</h3>
-              <p className="text-sm text-gray-500 mb-2">Author: {blog.author}</p>
-              <p className="text-gray-700 text-sm">{blog.content.slice(0, 100)}...</p>
+              <p className="text-sm mb-2">Author: {blog.author}</p>
+              <p className="text-gray-400 text-sm">{blog.content.slice(0, 100)}...</p>
 
               <button
                 onClick={() => handleDelete(blog._id)}

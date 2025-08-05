@@ -1,7 +1,10 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 export default function AddBlogPage() {
+  const router = useRouter();
   const [form, setForm] = useState({
     image: '',
     title: '',
@@ -15,20 +18,29 @@ export default function AddBlogPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch('/api/blog', {
+
+    try {
+      const res = await fetch('/api/blog', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),
     });
     const data = await res.json();
     if (data.insertedId) {
-      alert('Blog submitted successfully!');
+      toast.success('Blog submitted successfully!');
+      router.push('/dashboard/manage-blogs')
       setForm({ image: '', title: '', author: '', content: '' });
+    }else {
+        toast.error(data.error || "Failed to submit Blog");
+      }
+    } catch (error) {
+      toast.error("Error submitting result",error);
     }
+    
   };
 
   return (
-    <div className="max-w-xl mx-auto px-4 shadow rounded py-4">
+    <div className="max-w-xl mx-auto p-6 shadow rounded bg-color">
       <h2 className="text-2xl font-bold mb-6 text-center text-orange-500">Submit an Islamic Article</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input

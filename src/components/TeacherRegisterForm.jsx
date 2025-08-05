@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 export default function TeacherRegisterForm() {
   const [formData, setFormData] = useState({
@@ -23,21 +24,21 @@ export default function TeacherRegisterForm() {
     const result = await res.json();
 
     if (result.success) {
-      alert("Teacher Registered Successfully!");
+      toast.success("Teacher Registered Successfully!");
       setFormData({
     name: '',fatherName: '',motherName: '',email: '',phone: '',image: '',gender: '',dob: '',nationality: '',nid: '',address: '',qualification: '',institution: '',department: '',experience: '',teachingSubjects: '',availableTime: '',salaryExpectation: '',joiningDate: '',additionalNotes: '',role: "",bio: "",
   });
     } else {
-      alert("Failed to Register Teacher");
+      toast.error("Failed to Register Teacher");
     }
   } catch (err) {
     console.error(err);
-    alert("Server error!");
+    toast.error("Server error!");
   }
 };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 bg-white shadow-md rounded-md">
+    <div className="max-w-4xl mx-auto p-4 bg-color shadow-md rounded-md">
       <h2 className="text-2xl font-bold text-center mb-6 text-orange-600">Teacher Registration Form</h2>
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {Object.keys(formData).map((key) => (

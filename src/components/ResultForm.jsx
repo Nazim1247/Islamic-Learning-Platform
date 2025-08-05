@@ -1,15 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function AddResultForm() {
   const [formData, setFormData] = useState({
-    name: "",
-    roll: "",
-    class: "",
-    subject: "",
-    result: "",
-    imageUrl: "",
+    name: "",roll: "",class: "",subject: "",result: "",imageUrl: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -35,27 +31,23 @@ export default function AddResultForm() {
       const result = await res.json();
 
       if (res.ok) {
-        alert("Result submitted successfully");
+        toast.success("Result submitted successfully");
         setFormData({
-          name: "",
-          roll: "",
-          class: "",
-          subject: "",
-          result: "",
+          name: "",roll: "",class: "",subject: "",result: "",
           imageUrl: "",
         });
       } else {
-        alert(result.error || "Failed to submit result");
+        toast.error(result.error || "Failed to submit result");
       }
     } catch (err) {
-      alert("Error submitting result");
+      toast.error("Error submitting result");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="bg-white p-6 rounded shadow max-w-3xl mx-auto">
+    <div className="bg-color p-6 rounded shadow max-w-3xl mx-auto">
         <h2 className="text-2xl font-bold text-center text-orange-500 mb-4">Add Student Result</h2>
         <form
       onSubmit={handleSubmit}

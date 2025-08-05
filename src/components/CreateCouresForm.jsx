@@ -1,21 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const CreateCourseForm = () => {
   const [formData, setFormData] = useState({
-    title: "",
-    description: "",
-    details: "",
-    duration: "",
-    schedule: "",
-    instructor: "",
-    liveClass: false,
-    recordedClass: false,
-    certificate: false,
-    sistersBatch: false,
-    price: "",
-    image: "",
+    title: "",description: "",details: "",duration: "",schedule: "",instructor: "",liveClass: false,recordedClass: false,certificate: false,sistersBatch: false,price: "",image: "",
   });
 
   const handleChange = (e) => {
@@ -52,36 +42,25 @@ const CreateCourseForm = () => {
     const data = await res.json();
 
     if (res.ok) {
-      alert("Course Created Successfully!");
-      console.log("Mongo Response:", data);
+      toast.success("Course Created Successfully!");
+      // console.log("Mongo Response:", data);
     } else {
-      alert("Failed to Create Course");
+      toast.error("Failed to Create Course");
     }
   } catch (err) {
     console.error("Error submitting course:", err);
-    alert("Something went wrong");
+    toast.error("Something went wrong");
   }
 
   // Reset Form
   setFormData({
-    title: "",
-    description: "",
-    details: "",
-    duration: "",
-    schedule: "",
-    instructor: "",
-    liveClass: false,
-    recordedClass: false,
-    certificate: false,
-    sistersBatch: false,
-    price: "",
-    image: "",
+    title: "",description: "",details: "",duration: "",schedule: "",instructor: "",liveClass: false,recordedClass: false,certificate: false,sistersBatch: false,price: "",image: "",
   });
 };
 
 
   return (
-    <div className="max-w-3xl mx-auto p-4 bg-white rounded-2xl shadow-md">
+    <div className="max-w-3xl mx-auto p-4 bg-color rounded-2xl shadow-md">
       <h2 className="text-xl md:text-3xl font-bold text-center text-orange-600 mb-4">
         Create a New Course
       </h2>
@@ -139,7 +118,7 @@ const CreateCourseForm = () => {
         />
 
         {/* Features Checkboxes */}
-        <div className="grid grid-cols-2 gap-2 text-sm text-gray-700">
+        <div className="grid grid-cols-2 gap-2 text-sm text-gray-400">
           <label className="flex items-center gap-2">
             <input
               type="checkbox"
