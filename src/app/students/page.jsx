@@ -20,13 +20,13 @@ export default function StudentsPage() {
       <h1 className="text-3xl font-bold text-center text-orange-500 mb-2">
         Our Proud Graduates
       </h1>
-      <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+      <p className="text-center mb-8 max-w-3xl mx-auto">
         Our students who have completed their studies from this institution are now shining across the globe in various fields. We proudly present some of their remarkable achievements.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {students.map((student) => (
-            <div key={student._id} className="bg-white shadow-md rounded-lg p-5 hover:shadow-xl transition duration-300">
+            <div key={student._id} className="bg-color shadow-md rounded-lg p-5 hover:shadow-xl transition duration-300">
             <Image
               src={student?.image}
               width={200}
@@ -38,15 +38,15 @@ export default function StudentsPage() {
               <FaUserGraduate className="text-blue-600" />
               {student.name}
             </h2>
-            <p className="text-gray-700 mt-1 flex items-center gap-2">
+            <p className="mt-1 flex items-center gap-2">
               <FaMapMarkerAlt className="text-red-500" />
               Location: {student.address || "Unknown"}
             </p>
-            <p className="text-gray-700 mt-2 flex items-center gap-2">
+            <p className="mt-2 flex items-center gap-2">
               <FaGraduationCap className="text-green-600" />
               Completed: {student.className || "Not specified"}
             </p>
-            <p className="text-gray-700 mt-1 flex items-center gap-2">
+            <p className="mt-1 flex items-center gap-2">
               <FaBriefcase className="text-purple-600" />
               Current Job: {student.role || "N/A"}
             </p>

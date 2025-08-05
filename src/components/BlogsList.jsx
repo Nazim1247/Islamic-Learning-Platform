@@ -25,9 +25,17 @@ export default function BlogPage() {
 
   useEffect(() => {
     const fetchBlogs = async () => {
-      const res = await fetch('/api/blog');
+      try {
+        const res = await fetch('/api/blog');
       const data = await res.json();
-      setBlogs(data);
+      if (Array.isArray(data)) {
+        setBlogs(data);
+      } else {
+        console.error("Invalid data format:", data);
+      }
+      } catch (error) {
+        console.error("Failed to load Blogs", err);
+      } 
     };
     fetchBlogs();
   }, []);

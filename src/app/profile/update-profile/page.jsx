@@ -55,7 +55,7 @@ export default function UpdateProfileForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-md mx-auto space-y-4 p-6 bg-white shadow rounded mt-20 mb-4"
+      className="max-w-md mx-auto space-y-4 p-6 bg-color shadow rounded mt-20 mb-4"
     >
       <h2 className="text-xl font-bold text-center text-orange-500">Update Profile</h2>
 

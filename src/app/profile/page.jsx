@@ -36,7 +36,7 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="max-w-md mx-auto mt-20 mb-4 p-6 bg-white rounded shadow">
+    <div className="max-w-md mx-auto mt-20 mb-4 p-6 bg-color rounded shadow">
       <div className="text-center">
         <Image
           src={userInfo.image || "/default-avatar.png"}
@@ -46,7 +46,7 @@ const ProfilePage = () => {
           className="w-24 h-24 rounded-full mx-auto mb-4 border"
         />
         <h2 className="text-xl font-semibold">{userInfo.name || "No Name"}</h2>
-        <p className="text-gray-600">{userInfo.email}</p>
+        <p className="text-gray-400">{userInfo.email}</p>
         <p className="text-sm mt-1 text-orange-600 font-medium">
           Role: {userInfo.role || "student"}
         </p>

@@ -19,18 +19,18 @@ export default function EnrolledCourses() {
   }, [session]);
 
   if (status === 'loading') {
-    return <p>Loading...</p>;
+    return <p className='text-center'>Loading...</p>;
   }
 
   if (!session) {
-    return <p>Please login to see your enrolled courses.</p>;
+    return <p className='text-center'>Please login to see your enrolled courses.</p>;
   }
 
   return (
     <div className="">
       <h2 className="text-2xl font-bold mb-4 text-center text-orange-600">Your Enrolled Courses</h2>
       {enrollments.length === 0 ? (
-        <p>You haven't enrolled in any courses yet.</p>
+        <p className='text-center'>You haven't enrolled in any courses yet.</p>
       ) : (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {enrollments.map((item) => (
