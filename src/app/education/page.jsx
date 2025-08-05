@@ -25,7 +25,7 @@ export default function EducationPage() {
   }, []);
 
   return (
-    <div className="mt-20 p-4 max-w-[1250px] mx-auto">
+    <div className="mt-16 p-4 max-w-[1250px] mx-auto">
       <h1 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-4">All Classes</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {classes.map((item, index) => (
@@ -76,7 +76,7 @@ export default function EducationPage() {
   </div>
 
   <div className='mt-4'>
-    <Link href={'https://forms.gle/dMAxDNnN6UCLiGF27'} target="_blank">
+    <Link href={'/enroll'}>
     <button
       className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition animate-pulse w-full"
     >
