@@ -25,32 +25,65 @@ export default function ManageTeachers() {
     fetchTeachers();
   }, []);
 
-  const handleDelete = async (id) => {
-    const confirm = window.confirm('Are you sure you want to delete this teacher?');
-    if (!confirm) return;
+const handleDelete = async (id) => {
+  toast((t) => (
+    <span>
+      Are you sure you want to delete this teacher?
+      <div style={{ marginTop: '10px', display: 'flex', gap: '10px' }}>
+        <button
+          onClick={async () => {
+            toast.dismiss(t.id);
+            try {
+              const res = await fetch(`/api/teachers/${id}`, {
+                method: 'DELETE',
+              });
 
-    try {
-      const res = await fetch(`/api/teachers/${id}`, {
-        method: 'DELETE',
-      });
+              const data = await res.json();
 
-      const data = await res.json();
+              if (res.status === 200) {
+                setTeachers((prev) => prev.filter((teacher) => teacher._id !== id));
+                router.refresh();
+                toast.success('Teacher deleted successfully');
+              } else {
+                toast.error(data.message || 'Failed to delete teacher');
+              }
+            } catch (error) {
+              toast.error('Something went wrong');
+            }
+          }}
+          style={{
+            backgroundColor: 'red',
+            color: 'white',
+            padding: '5px 10px',
+            borderRadius: '4px',
+            fontSize: '14px',
+          }}
+        >
+          Yes
+        </button>
 
-      if (res.status === 200) {
-        setTeachers((prev) => prev.filter(teacher => teacher._id !== id));
-        router.refresh();
-        toast.success('Teacher deleted successfully');
-      } else {
-        toast.error(data.message || 'Failed to delete teacher');
-      }
-    } catch (error) {
-      toast.error('Something went wrong');
-    }
-  };
+        <button
+          onClick={() => toast.dismiss(t.id)}
+          style={{
+            backgroundColor: 'gray',
+            color: 'white',
+            padding: '5px 10px',
+            borderRadius: '4px',
+            fontSize: '14px',
+          }}
+        >
+          No
+        </button>
+      </div>
+    </span>
+  ), {
+    duration: 10000,
+  });
+};
 
   return (
     <div className="">
-      <h2 className="text-2xl font-bold text-center text-orange-600 mb-6">Manage Teachers</h2>
+      <h2 className="text-2xl font-bold mb-2 bg-orange-500 text-white px-4 py-1 rounded-t">Total Teachers: ({teachers?.length})</h2>
 
       {loading ? (
         <p className="text-center text-gray-600">Loading teachers...</p>
@@ -59,13 +92,13 @@ export default function ManageTeachers() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {teachers.map((teacher) => (
-            <div key={teacher._id} className="bg-white shadow-md p-4 rounded relative">
+            <div key={teacher._id} className="bg-color shadow hover:shadow-md p-4 rounded relative">
                <div className='flex items-center gap-2'>
                  <Image src={teacher.image} width={200} height={20} alt='image' className='w-8 h-8 rounded-full'/>
               <h3 className="text-lg font-semibold text-orange-500">{teacher.name}</h3>
                </div>
-              <p className="text-xs text-gray-500 mt-1">Email: {teacher.email}</p>
-              <p className="text-sm text-gray-600">Subject: {teacher.teachingSubjects}</p>
+              <p className="text-xs text-gray-400 mt-1">Email: {teacher.email}</p>
+              <p className="text-sm text-gray-500">Subject: {teacher.teachingSubjects}</p>
 
               <button
                 onClick={() => handleDelete(teacher._id)}

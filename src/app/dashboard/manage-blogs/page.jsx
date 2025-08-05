@@ -85,7 +85,7 @@ const handleDelete = async (id) => {
 
   return (
     <div className="">
-      <h2 className="text-3xl font-bold text-center text-orange-600 mb-6">Manage Blogs</h2>
+      <h2 className="text-2xl font-bold bg-orange-500 text-white px-4 py-1 rounded-t">Total Blogs: ({blogs?.length})</h2>
 
       {loading ? (
         <p className="text-center text-gray-400">Loading blogs...</p>

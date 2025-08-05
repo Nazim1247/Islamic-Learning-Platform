@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const ManageClasses = () => {
   const [classes, setClasses] = useState([]);
@@ -15,33 +16,70 @@ const ManageClasses = () => {
     fetchClasses();
   }, []);
 
-  const handleDelete = async (id) => {
-    const confirmDelete = confirm("Are you sure you want to delete this course?");
-    if (!confirmDelete) return;
+const handleDelete = async (id) => {
+  toast(
+    (t) => (
+      <span>
+        Are you sure you want to delete this course?
+        <br />
+        <button
+          onClick={async () => {
+            toast.dismiss(t.id);
 
-    try {
-      const res = await fetch(`/api/delete-class`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id }),
-      });
-      const result = await res.json();
+            try {
+              const res = await fetch(`/api/delete-class`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id }),
+              });
 
-      if (result.success) {
-        setClasses(classes.filter((cls) => cls._id !== id));
-      }
-    } catch (error) {
-      console.error("Delete error:", error);
-    }
-  };
+              const result = await res.json();
+
+              if (result.success) {
+                setClasses((prev) => prev.filter((cls) => cls._id !== id));
+                toast.success('Course deleted successfully');
+              } else {
+                toast.error(result.message || 'Failed to delete course');
+              }
+            } catch (error) {
+              console.error("Delete error:", error);
+              toast.error('Something went wrong');
+            }
+          }}
+          style={{
+            marginRight: '10px',
+            background: 'red',
+            color: 'white',
+            borderRadius: '5px',
+            padding: '5px 10px',
+          }}
+        >
+          Yes
+        </button>
+        <button
+          onClick={() => toast.dismiss(t.id)}
+          style={{
+            background: 'gray',
+            color: 'white',
+            borderRadius: '5px',
+            padding: '5px 10px',
+          }}
+        >
+          No
+        </button>
+      </span>
+    ),
+    { duration: 10000 }
+  );
+};
 
   return (
     <div className="">
-      <h2 className="text-2xl font-bold mb-4 bg-orange-500 text-white px-4 py-1 rounded-t">Total Classes: ({classes?.length})</h2>
+      <h2 className="text-2xl font-bold bg-orange-500 text-white px-4 py-1 rounded-t">Total Classes: ({classes?.length})</h2>
 
       <div className="overflow-x-auto">
         <table className="min-w-full border border-gray-300">
-          <thead className="bg-gray-100 text-left">
+          <thead className="bg-color text-left">
             <tr>
               <th className="border px-4 py-2">#</th>
               <th className="border px-4 py-2">Class Name</th>

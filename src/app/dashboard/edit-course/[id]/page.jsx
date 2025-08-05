@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
+import { toast } from "react-toastify";
 
 const EditCourseForm = () => {
   const [formData, setFormData] = useState(null);
@@ -49,10 +50,10 @@ const EditCourseForm = () => {
       });
 
       if (res.ok) {
-        alert("Course updated successfully");
+        toast.success("Course updated successfully");
         router.push("/dashboard/manage-courses");
       } else {
-        alert("Failed to update");
+        toast.error("Failed to update");
       }
     } catch (err) {
       console.error("Update error:", err);
@@ -62,7 +63,7 @@ const EditCourseForm = () => {
   if (!formData) return <p className="text-center py-10">Loading...</p>;
 
   return (
-    <div className="max-w-3xl mx-auto p-4 bg-white rounded-2xl shadow-md">
+    <div className="max-w-3xl mx-auto p-4 bg-color rounded-2xl shadow-md">
       <h2 className="text-2xl font-bold text-center text-orange-600 mb-4">
         Update Course
       </h2>
@@ -75,7 +76,7 @@ const EditCourseForm = () => {
         <input type="text" name="instructor" placeholder="Instructor" value={formData.instructor} onChange={handleChange} className="w-full px-4 py-2 border rounded" />
 
         {/* Checkboxes */}
-        <div className="grid grid-cols-2 gap-2 text-sm text-gray-700">
+        <div className="grid grid-cols-2 gap-2 text-sm text-gray-400">
           {["liveClass", "recordedClass", "certificate", "sistersBatch"].map((field) => (
             <label key={field} className="flex items-center gap-2">
               <input type="checkbox" name={field} checked={formData[field]} onChange={handleChange} />

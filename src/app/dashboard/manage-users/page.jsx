@@ -15,7 +15,7 @@ const ManageUsers = () => {
   }, []);
 
   const handleRoleChange = async (userId, currentRole) => {
-    // Toggle logic: student → teacher → admin → student
+    
     const nextRole = currentRole === "student"
       ? "teacher"
       : currentRole === "teacher"
@@ -42,13 +42,13 @@ const ManageUsers = () => {
 
   return (
     <div className="">
-      <h2 className="text-xl font-bold bg-orange-500 text-white rounded-t px-4 py-2 mb-4">
+      <h2 className="text-xl font-bold bg-orange-500 text-white rounded-t px-4 py-2">
         Total Users: ({users?.length})
       </h2>
 
       <div className="overflow-x-auto">
         <table className="min-w-full border border-gray-300">
-          <thead className="bg-gray-100">
+          <thead className="bg-color">
             <tr>
               <th className="border px-4 py-2">#</th>
               <th className="border px-4 py-2">Name</th>

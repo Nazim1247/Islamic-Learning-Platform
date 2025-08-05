@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
+import { toast } from 'react-toastify';
 
 const ReviewFormModal = () => {
   const { data: session } = useSession();
@@ -36,7 +37,7 @@ const ReviewFormModal = () => {
     });
 
     if (res.ok) {
-      alert('Review submitted!');
+      toast.success('Review submitted!');
       setFormData({
         name: session?.user?.name || '',
         email: session?.user?.email || '',
@@ -46,7 +47,7 @@ const ReviewFormModal = () => {
       });
       setShowModal(false);
     } else {
-      alert('Failed to submit review');
+      toast.error('Failed to submit review');
     }
   };
 
@@ -63,12 +64,12 @@ const ReviewFormModal = () => {
 
       {showModal && (
         <div className="fixed inset-0 z-50 bg-opacity-30 flex justify-center items-center">
-          <div className="bg-gray-100 p-6 rounded-md w-full max-w-md relative">
+          <div className="bg-color p-6 rounded-md w-full max-w-md relative">
             <button onClick={() => setShowModal(false)} className="absolute top-2 right-2 hover:text-red-500 text-xl">×</button>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <input name="name" value={formData.name} readOnly className="w-full border px-3 py-2 bg-gray-100" />
-              <input name="email" value={formData.email} readOnly className="w-full border px-3 py-2 bg-gray-100" />
-              <input name="image" value={formData.image} readOnly className="w-full border px-3 py-2 bg-gray-100" />
+              <input name="name" value={formData.name} readOnly className="w-full border px-3 py-2" />
+              <input name="email" value={formData.email} readOnly className="w-full border px-3 py-2" />
+              <input name="image" value={formData.image} readOnly className="w-full border px-3 py-2" />
               <input name="rating" placeholder="Rating (1-5)" type="number" min="1" max="5" value={formData.rating} onChange={handleChange} className="w-full border px-3 py-2" required />
               <textarea name="comment" placeholder="Your review..." value={formData.comment} onChange={handleChange} className="w-full border px-3 py-2" required></textarea>
               <button type="submit" className="bg-orange-500 hover:bg-orange-600 w-full text-white px-4 py-2 rounded">Submit</button>

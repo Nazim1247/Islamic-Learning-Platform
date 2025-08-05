@@ -11,7 +11,7 @@ export default function ManageGRStudents() {
   useEffect(() => {
     const fetchGraduates = async () => {
       try {
-        const res = await fetch('/api/students');
+        const res = await fetch('/api/students/all-students');
         const data = await res.json();
         setGraduates(data);
         setLoading(false);
@@ -23,32 +23,65 @@ export default function ManageGRStudents() {
     fetchGraduates();
   }, []);
 
-  const handleDelete = async (id) => {
-    const confirm = window.confirm("Are you sure you want to delete this graduate?");
-    if (!confirm) return;
+const handleDelete = async (id) => {
+  toast(
+    (t) => (
+      <span>
+        Are you sure you want to delete this graduate?
+        <br />
+        <button
+          onClick={async () => {
+            toast.dismiss(t.id);
 
-    try {
-      const res = await fetch(`/api/students/${id}`, {
-        method: 'DELETE',
-      });
+            try {
+              const res = await fetch(`/api/students/${id}`, {
+                method: 'DELETE',
+              });
 
-      const data = await res.json();
+              const data = await res.json();
 
-      if (res.status === 200) {
-        setGraduates(prev => prev.filter(item => item._id !== id));
-        toast.success('Graduate deleted successfully');
-      } else {
-        toast.error('Failed to delete graduate');
-      }
-    } catch (error) {
-      console.error('Delete error:', error);
-      toast.error('Something went wrong');
-    }
-  };
+              if (res.status === 200) {
+                setGraduates((prev) => prev.filter((item) => item._id !== id));
+                toast.success('Graduate deleted successfully');
+              } else {
+                toast.error(data.message || 'Failed to delete graduate');
+              }
+            } catch (error) {
+              console.error('Delete error:', error);
+              toast.error('Something went wrong');
+            }
+          }}
+          style={{
+            marginRight: '10px',
+            background: 'red',
+            color: 'white',
+            borderRadius: '5px',
+            padding: '5px 10px',
+          }}
+        >
+          Yes
+        </button>
+        <button
+          onClick={() => toast.dismiss(t.id)}
+          style={{
+            background: 'gray',
+            color: 'white',
+            borderRadius: '5px',
+            padding: '5px 10px',
+          }}
+        >
+          No
+        </button>
+      </span>
+    ),
+    { duration: 10000 }
+  );
+};
+
 
   return (
     <div className="">
-      <h2 className="text-3xl font-bold text-center text-orange-600 mb-6">Manage Graduate Students</h2>
+      <h2 className="text-2xl font-bold bg-orange-500 text-white px-4 py-1 rounded-t">Total Graduates Students: ({graduates?.length})</h2>
 
       {loading ? (
         <p className="text-center">Loading...</p>
@@ -58,7 +91,7 @@ export default function ManageGRStudents() {
         <div className="overflow-x-auto">
           <table className="min-w-full table-auto border border-gray-300">
             <thead>
-              <tr className="bg-gray-100 text-left">
+              <tr className="bg-color text-left">
                 <th className="px-4 py-2">Name</th>
                 <th className="px-4 py-2">Address</th>
                 <th className="px-4 py-2">Class Name</th>
