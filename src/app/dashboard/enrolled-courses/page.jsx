@@ -10,13 +10,13 @@ export default function EnrolledCourses() {
   const [enrollments, setEnrollments] = useState([]);
 
   useEffect(() => {
-    if (session?.user?.email) {
+    if (status === 'authenticated' && session?.user?.email) {
       fetch(`/api/enroll`)
         .then((res) => res.json())
         .then((data) => setEnrollments(data))
         .catch((err) => console.error('Failed to fetch enrollments:', err));
     }
-  }, [session]);
+  }, [session, status]);
 
   if (status === 'loading') {
     return <p className='text-center'>Loading...</p>;

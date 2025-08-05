@@ -15,6 +15,7 @@ export const collectionNameObj = {
 
 const uri = process.env.MONGODB_URI;
 
+
 export default function dbConnect (collectionName){
     const client = new MongoClient(uri, {
         serverApi: {

@@ -7,6 +7,7 @@ export async function POST(req) {
     const res = await dbConnect(collectionNameObj.blogCollection).insertOne(body);
     return NextResponse.json({ insertedId: res.insertedId });
   } catch (error) {
+    console.error("Error fetching blog:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
@@ -16,6 +17,7 @@ export async function GET() {
     const blogs = await dbConnect(collectionNameObj.blogCollection).find().sort({ _id: -1 }).toArray();
     return NextResponse.json(blogs);
   } catch (error) {
+    console.error("Error fetching blog:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

@@ -13,6 +13,7 @@ export async function DELETE(req, { params }) {
       return NextResponse.json({ message: 'Result not found' }, { status: 404 });
     }
   } catch (error) {
+    console.error('Server Result Error:', error);
     return NextResponse.json({ message: 'Error deleting result' }, { status: 500 });
   }
 }

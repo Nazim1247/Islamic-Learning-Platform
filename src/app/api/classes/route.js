@@ -11,6 +11,7 @@ export const POST = async (req) => {
 
     } catch (error) {
         console.error("Error creating class:", error);
+        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }
 

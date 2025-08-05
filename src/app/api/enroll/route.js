@@ -21,7 +21,8 @@ export async function POST(req) {
 }
 
 export const GET = async () => {
-  const session = await getServerSession(authOptions);
+  try {
+    const session = await getServerSession(authOptions);
   const email = session?.user?.email;
 
   if (!email) {
@@ -32,4 +33,9 @@ export const GET = async () => {
   const enrollments = await enrollmentCollection.find({ email }).toArray();
 
   return NextResponse.json(enrollments);
+  } catch (error) {
+    console.error('Error in /api/enroll:', error);
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+  }
+  
 };

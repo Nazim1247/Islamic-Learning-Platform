@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-base-200 fixed top-0 left-0 w-full z-50">
+    <div className="bg-color fixed top-0 left-0 w-full z-50">
       <div className="navbar shadow-sm max-w-[1250px] mx-auto px-4 py-2">
 
         {/* Navbar Start */}
@@ -114,7 +114,7 @@ const Navbar = () => {
               </ul>
             </div>
           ) : (
-            <Link href="/login" className="btn btn-sm bg-orange-500 hover:bg-orange-600 text-white rounded">Login</Link>
+            <Link href="/login" className="btn border-none btn-sm bg-orange-500 hover:bg-orange-600 text-white rounded">Login</Link>
           )}
         </div>
       </div>

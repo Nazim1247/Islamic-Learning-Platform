@@ -23,9 +23,17 @@ export default function ResultsList() {
 
   useEffect(() => {
     const fetchResults = async () => {
-      const res = await fetch('/api/results');
+      try {
+        const res = await fetch('/api/results');
       const data = await res.json();
-      setResults(data);
+      if (Array.isArray(data)) {
+        setResults(data);
+      } else {
+        console.error("Invalid data format:", data);
+      }
+      } catch (error) {
+        console.error("Failed to load results", err);
+      } 
     };
     fetchResults();
   }, []);

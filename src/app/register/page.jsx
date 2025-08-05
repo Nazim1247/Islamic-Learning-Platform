@@ -42,44 +42,44 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-20 py-4">
-    <div className="bg-white shadow p-6 rounded">
+    <div className="max-w-md mx-auto mt-16 py-4">
+    <div className="bg-color shadow p-6 rounded">
       <h2 className="text-3xl text-center text-orange-600 font-bold mb-4">Register</h2>
       <form onSubmit={handleRegister}>
         <input
           name="name"
           type="text"
           placeholder="Full Name"
-          className="input input-bordered w-full mb-3"
+          className="input input-bordered w-full mb-3 bg-color shadow"
           required
         />
         <input
           name="image"
           type="text"
           placeholder="Image URL"
-          className="input input-bordered w-full mb-3"
+          className="input input-bordered w-full mb-3 bg-color shadow"
         />
         <input
           name="email"
           type="email"
           placeholder="Email"
-          className="input input-bordered w-full mb-3"
+          className="input input-bordered w-full mb-3 bg-color shadow"
           required
         />
         <input
           name="password"
           type="password"
           placeholder="Password"
-          className="input input-bordered w-full mb-3"
+          className="input input-bordered w-full mb-3 bg-color shadow"
           required
         />
-        <button type="submit" className="btn bg-orange-500 hover:bg-orange-600 text-white rounded w-full">
+        <button type="submit" className="btn border-none bg-orange-500 hover:bg-orange-600 text-white rounded w-full">
           Register
         </button>
         <GoogleLoginBtn />
         <Link href={'/login'}>
-        <button className="btn w-full mt-3 rounded">
-            Have you already Account in This Page<span className="text-red-500">Please Login</span>
+        <button className="mt-3 px-4 py-2 border-none text-center w-full rounded bg-gray-300">
+            Have you already Account in This Page <span className="text-red-500 hover:underline">Please Login</span>
         </button>
         </Link> 
 

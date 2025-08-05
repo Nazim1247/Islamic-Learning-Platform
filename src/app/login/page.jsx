@@ -33,8 +33,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-20 py-4">
-      <div className="bg-white shadow p-6 rounded">
+    <div className="max-w-md mx-auto mt-16 py-4">
+      <div className="bg-color shadow p-6 rounded">
         <h2 className="text-3xl text-center text-orange-600 font-bold mb-4">Login</h2>
         <form onSubmit={handleLogin}>
           <input
@@ -42,24 +42,24 @@ export default function LoginPage() {
             type="email"
             placeholder="Email"
             required
-            className="input mb-2 w-full"
+            className="input mb-2 w-full bg-color shadow"
           />
           <input
             name="password"
             type="password"
             placeholder="Password"
             required
-            className="input mb-4 w-full"
+            className="input mb-4 w-full bg-color shadow"
           />
           <button
             type="submit"
-            className="btn bg-orange-500 hover:bg-orange-600 text-white w-full rounded"
+            className="btn border-none bg-orange-500 hover:bg-orange-600 text-white w-full rounded"
           >
             Login
           </button>
-<GoogleLoginBtn />
+         <GoogleLoginBtn />
           <Link href="/register">
-            <p className="mt-3 btn text-center w-full rounded">
+            <p className="mt-3 px-4 py-2 border-none text-center w-full rounded bg-gray-300">
               Are you new here?{" "}
               <span className="text-orange-600 hover:underline">Please Register</span>
             </p>

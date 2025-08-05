@@ -49,7 +49,7 @@ export default function EnrollPage() {
 
     if (res.ok) {
       toast.success('Enrollment submitted successfully!');
-    //   router.push('/thank-you');
+      router.push('/dashboard/enrolled-courses');
     } else {
       toast.error('Something went wrong!');
     }

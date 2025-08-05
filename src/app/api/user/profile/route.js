@@ -22,6 +22,7 @@ export async function POST(req) {
 
     return NextResponse.json(user);
   } catch (error) {
+    console.error('Server User Error:', error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
@@ -38,6 +39,7 @@ export async function GET() {
 
     return NextResponse.json(user);
   } catch (error) {
+    console.error('Server Result Error:', error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
@@ -52,7 +54,7 @@ export async function PATCH(req) {
     const body = await req.json();
     const { name, email, image, password } = body;
 
-    const userCollection = await dbConnect(collectionNameObj.userCollection);
+    const userCollection = dbConnect(collectionNameObj.userCollection);
 
     const updateDoc = {
       $set: {
@@ -67,7 +69,7 @@ export async function PATCH(req) {
     }
 
     const result = await userCollection.updateOne(
-      { email: session.user.email },
+      { email: session?.user?.email },
       updateDoc
     );
 
@@ -76,11 +78,12 @@ export async function PATCH(req) {
     }
 
     const updatedUser = await userCollection.findOne({
-      email: session.user.email,
+      email: session?.user?.email,
     });
 
     return NextResponse.json(updatedUser);
   } catch (error) {
+    console.error('Server Result Error:', error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

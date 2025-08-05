@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🕌 Islamic Learning Platform
 
-## Getting Started
+An Islamic Learning Management System (LMS) built with **Next.js**, **Tailwind CSS**, **MongoDB**, and **NextAuth**. This platform allows Admins, Teachers, and Students to interact through a role-based dashboard with features such as course management, class enrollment, reviews, and more.
 
-First, run the development server:
+## 🌐 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🔗 [Live Site](https://islamic-learning-platform.vercel.app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔗 [Github Link](https://github.com/Nazim1247/Islamic-Learning-Platform)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📚 Features
 
-## Learn More
+### 🚀 Public Website
+- Hero Slider with Islamic theme
+- About Us (Mission & Vision with Quran/Hadith)
+- Featured Courses
+- Why Choose Us
+- Our Teachers/Scholars
+- Student Testimonials
+- FAQs and Blog Section
+- Contact & Newsletter Subscription
 
-To learn more about Next.js, take a look at the following resources:
+### 🔐 Authentication
+- NextAuth-based login system
+- Role-based access: Admin, Teacher, Student
+- Google Sign-in support
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🧑‍💼 Admin Dashboard
+- Create / Manage Courses
+- Create / Manage Classes (1–10)
+- Manage Teachers & Students
+- Approve Reviews
+- Monitor Enrollments
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 👨‍🏫 Teacher Dashboard
+- View assigned classes
+- Add class materials or notes (optional feature)
+- See enrolled students
+- Update profile
 
-## Deploy on Vercel
+### 👨‍🎓 Student Dashboard
+- Enroll in courses
+- View enrolled courses
+- Write and manage reviews
+- Update profile
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Tech Stack
+
+| Technology     | Description                       |
+|----------------|-----------------------------------|
+| **Next.js**    | App router, SSR, SEO-friendly     |
+| **Tailwind CSS** | Modern utility-first UI styling |
+| **MongoDB**    | NoSQL database for data storage   |
+| **NextAuth.js**| Authentication and session management |
+| **React Icons**| Beautiful icon support            |
