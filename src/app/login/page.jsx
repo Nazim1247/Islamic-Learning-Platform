@@ -5,6 +5,7 @@ import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -12,7 +13,7 @@ export default function LoginPage() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError(null); // Clear previous error
+    setError(null);
 
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -24,10 +25,10 @@ export default function LoginPage() {
     });
 
     if (res.ok) {
-        alert('login successfully!')
+        toast.success('login successfully!')
       router.push("/");
     } else {
-        alert("Invalid email or password")
+        toast.error("Invalid email or password")
       setError("Invalid email or password");
     }
   };

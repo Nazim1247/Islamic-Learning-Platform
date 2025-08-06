@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import GoogleLoginBtn from "@/social/GoogleLoginBtn";
+import { toast } from "react-toastify";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -32,11 +33,11 @@ export default function RegisterPage() {
     const data = await res.json();
 
     if (res.ok) {
-        alert("User registered successfully")
+        toast.success("User registered successfully")
       setSuccess("Registration successful! Redirecting to login...");
       setTimeout(() => router.push("/login"), 1500);
     } else {
-        alert("Registration failed!")
+        toast.error("Registration failed!")
       setError(data.message || "Registration failed!");
     }
   };
@@ -50,27 +51,27 @@ export default function RegisterPage() {
           name="name"
           type="text"
           placeholder="Full Name"
-          className="input input-bordered w-full mb-3 bg-color shadow"
+          className="input input-bordered w-full mb-3"
           required
         />
         <input
           name="image"
           type="text"
           placeholder="Image URL"
-          className="input input-bordered w-full mb-3 bg-color shadow"
+          className="input input-bordered w-full mb-3"
         />
         <input
           name="email"
           type="email"
           placeholder="Email"
-          className="input input-bordered w-full mb-3 bg-color shadow"
+          className="input input-bordered w-full mb-3"
           required
         />
         <input
           name="password"
           type="password"
           placeholder="Password"
-          className="input input-bordered w-full mb-3 bg-color shadow"
+          className="input input-bordered w-full mb-3"
           required
         />
         <button type="submit" className="btn border-none bg-orange-500 hover:bg-orange-600 text-white rounded w-full">
