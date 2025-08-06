@@ -2,8 +2,15 @@ import { getToken } from "next-auth/jwt"
 import { NextResponse } from "next/server"
 
 export const middleware = async (req) =>{
-    console.log('from middleware', req.nextUrl.pathname)
-    const token = await getToken({req})
+    
+    const token = await getToken({
+    req,
+    secret: process.env.NEXTAUTH_SECRET,
+    secureCookie: process.env.NODE_ENV === "production",
+    })
+    
+console.log("TOKEN from middleware:", token);
+
     if(token){
         return NextResponse.next()
     }else{
@@ -16,4 +23,6 @@ export const config = {
     '/dashboard/:path*',
      '/enroll/:path*',
     ],
+    runtime: 'nodejs',
 }
+
