@@ -64,7 +64,7 @@ const ReviewList = () => {
                   />
                   <div className="text-left">
                     <h3 className="text-lg font-semibold text-orange-500">{review.name}</h3>
-                    <p className="text-gray-700 dark:text-gray-300 text-sm"> {review.email}</p>
+                    <p className="text-sm"> {review.email}</p>
                     <p className="text-yellow-500 text-sm">⭐ {review.rating}/5</p>
                   </div>
                 </div>

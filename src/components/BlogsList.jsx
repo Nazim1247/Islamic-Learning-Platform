@@ -64,7 +64,7 @@ export default function BlogPage() {
                     {blog.title}
                   </h2>
 
-                  <div className="flex items-center text-gray-500 dark:text-gray-300 text-sm mb-3 space-x-4">
+                  <div className="flex items-center text-sm mb-3 space-x-4">
                     <div className="flex items-center gap-1">
                       <FaUserAlt className="text-green-600" />
                       <span>{blog.author}</span>
