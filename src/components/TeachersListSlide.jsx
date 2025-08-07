@@ -35,7 +35,7 @@ const TeachersListSlide = () => {
   };
 
   return (
-    <div className="px-4 my-12">
+    <div className="px-4 my-12" id='scholars'>
         <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-4">
           Meet Our Scholars
         </h2>

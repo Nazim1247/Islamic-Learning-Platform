@@ -41,7 +41,7 @@ export default function BlogPage() {
   }, []);
 
   return (
-    <div className="py-6">
+    <div className="py-6" id='blogs'>
       <h1 className="text-3xl font-bold text-center text-orange-600 mb-6">Islamic Articles & Blogs</h1>
       <p className="text-center text-gray-600 dark:text-gray-400 mb-4 max-w-3xl mx-auto">
         Stay informed with short, insightful articles on Islamic lifestyle, rulings, updates, and more — all written by experienced scholars and students of knowledge.
