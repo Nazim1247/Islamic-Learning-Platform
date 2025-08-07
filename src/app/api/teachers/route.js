@@ -20,12 +20,12 @@ export async function GET(request) {
   try {
     const teachers = await dbConnect(collectionNameObj.teacherCollection).find().toArray();
 
-    return new NextResponse(JSON.stringify(teachers), {
+    return NextResponse.json(teachers, {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
     console.error("Error fetching users:", error);
-    return new NextResponse("Internal Server Error", { status: 500 });
+    return NextResponse.json("Internal Server Error", { status: 500 });
   }
 }

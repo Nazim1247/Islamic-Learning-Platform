@@ -61,7 +61,7 @@ const FeaturedCourses = () => {
   />
 )}  
   <h3 className="text-xl font-bold text-orange-500">{course.title}</h3>
-  <p className="text-gray-600 dark:text-gray-300 text-sm">{course.description}</p>
+  <p className="text-sm">{course.description}</p>
 
   <p className="text-sm text-gray-700 dark:text-gray-400"><span className="font-medium">Instructor:</span> {course.instructor}</p>
   <p className="text-sm text-gray-700 dark:text-gray-400"><span className="font-medium">Duration:</span> {course.duration}</p>
@@ -93,7 +93,7 @@ const FeaturedCourses = () => {
   >
     <div
       ref={modalRef}
-      className="bg-gray-100 rounded-2xl max-w-lg w-full p-6 relative max-h-[85vh] overflow-y-auto shadow-2xl"
+      className="bg-color rounded-2xl max-w-lg w-full p-6 relative max-h-[85vh] overflow-y-auto shadow-2xl"
     >
       <button
         onClick={handleCloseModal}
@@ -108,19 +108,19 @@ const FeaturedCourses = () => {
         alt={selectedCourse.title}
         className="w-full h-56 object-cover rounded-xl mb-4"
       />
-      <h3 className="text-2xl font-bold text-gray-800 mb-2">
+      <h3 className="text-2xl font-bold text-orange-500 mb-2">
         {selectedCourse.title}
       </h3>
-      <p className="text-gray-600 mb-2">{selectedCourse.description}</p>
-      <p className="text-gray-700 text-sm mb-4">{selectedCourse.details}</p>
+      <p className="mb-2">{selectedCourse.description}</p>
+      <p className="text-gray-400 text-sm mb-4">{selectedCourse.details}</p>
 
-      <div className="space-y-2 mb-4 text-sm text-gray-700">
+      <div className="space-y-2 mb-4 text-sm text-gray-400">
         <p><strong>📅 Duration:</strong> {selectedCourse.duration}</p>
         <p><strong>🕰 Schedule:</strong> {selectedCourse.schedule}</p>
         <p><strong>👨‍🏫 Instructor:</strong> {selectedCourse.instructor}</p>
       </div>
 
-      <ul className="text-gray-700 text-sm mb-4 list-disc list-inside space-y-1">
+      <ul className="text-gray-400 text-sm mb-4 list-disc list-inside space-y-1">
         {selectedCourse.features?.map((f, i) => (
           <li key={i}>{f}</li>
         ))}

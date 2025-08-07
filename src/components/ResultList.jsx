@@ -31,7 +31,7 @@ export default function ResultsList() {
       } else {
         console.error("Invalid data format:", data);
       }
-      } catch (error) {
+      } catch (err) {
         console.error("Failed to load results", err);
       } 
     };
