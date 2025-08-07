@@ -42,7 +42,7 @@ const DashboardLayout = ({ children }) => {
 
   // Teacher Menu
   const teacherLinks = [
-    { href: '/dashboard/my-classes', label: 'My Classes', icon: <FaChalkboardTeacher /> },
+    { href: '/dashboard/teacher-classes', label: 'My Classes', icon: <FaChalkboardTeacher /> },
     { href: '/dashboard/assigned-courses', label: 'Assigned Courses', icon: <FaBookOpen /> },
     { href: '/dashboard/student-list', label: 'Student List', icon: <FaUsers /> },
     { href: '/dashboard/grade-submissions', label: 'Grade Submissions', icon: <FaTasks /> },
