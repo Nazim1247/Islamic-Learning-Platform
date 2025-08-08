@@ -99,7 +99,7 @@ export default function BlogPage() {
           onClick={() => setSelectedBlog(null)}
         >
           <div
-            className="bg-gray-100 max-w-2xl w-full rounded-lg shadow-lg overflow-auto max-h-[90vh] relative"
+            className="bg-color max-w-2xl w-full rounded-lg shadow-lg overflow-auto max-h-[90vh] relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -117,7 +117,7 @@ export default function BlogPage() {
             />
             <div className="p-6">
               <h2 className="text-2xl font-bold text-orange-600 mb-2">{selectedBlog.title}</h2>
-              <div className="flex items-center text-sm text-gray-500 mb-4 gap-4">
+              <div className="flex items-center text-sm mb-4 gap-4">
                 <div className="flex items-center gap-1">
                   <FaUserAlt className="text-green-600" />
                   <span>{selectedBlog.author}</span>
@@ -127,7 +127,7 @@ export default function BlogPage() {
                   <span>{new Date(selectedBlog.date || Date.now()).toLocaleDateString()}</span>
                 </div>
               </div>
-              <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+              <p className="text-gray-400 leading-relaxed whitespace-pre-line">
                 {selectedBlog.content}
               </p>
             </div>
