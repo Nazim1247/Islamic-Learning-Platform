@@ -44,7 +44,7 @@ const Navbar = () => {
             <Link href={'/'}>
             <Image src={'/images/logo.jpg'} width={20} height={20} alt="logo" className="w-10 h-10 rounded-full border hover:shadow"/>
             </Link>
-          <Link href="/" className="hidden md:flex font-bold text-xl">Learning Platform</Link>
+          <Link href="/" className="hidden md:flex font-bold text-xl">Islamic Learning Platform</Link>
           </div>
         </div>
 
