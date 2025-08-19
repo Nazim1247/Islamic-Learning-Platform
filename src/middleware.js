@@ -3,18 +3,18 @@ import { NextResponse } from "next/server"
 
 export const middleware = async (req) =>{
     
-    const token = await getToken({
-    req,
-    secret: process.env.NEXTAUTH_SECRET,
-    
-    })
     // const token = await getToken({
     // req,
     // secret: process.env.NEXTAUTH_SECRET,
-    // secureCookie: process.env.NODE_ENV === "production" ? true : false,
     // })
 
-console.log("TOKEN from middleware:", token);
+    const token = await getToken({
+    req,
+    secret: process.env.NEXTAUTH_SECRET,
+    secureCookie: process.env.NODE_ENV === "production" ? true : false,
+    })
+
+// console.log("TOKEN from middleware:", token);
 
     if(token){
         return NextResponse.next()
