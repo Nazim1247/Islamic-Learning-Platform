@@ -52,7 +52,7 @@ const DashboardLayout = ({ children }) => {
   const studentLinks = [
     { href: '/dashboard/enrolled-courses', label: 'Enrolled Courses', icon: <FaBookOpen /> },
     { href: '/dashboard/my-results', label: 'My Results', icon: <FaChartLine /> },
-    { href: '/dashboard/class-schedule', label: 'Class Schedule', icon: <FaListUl /> },
+    // { href: '/dashboard/class-schedule', label: 'Class Schedule', icon: <FaListUl /> },
     { href: '/dashboard/submit-assignment', label: 'Submit Assignment', icon: <FaTasks /> },
   ];
 
