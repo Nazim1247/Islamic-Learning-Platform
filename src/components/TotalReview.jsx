@@ -7,7 +7,7 @@ const TotalReview = () => {
 
   useEffect(() => {
     const fetchReviews = async () => {
-      const res = await fetch("/api/reviews");
+      const res = await fetch("/api/reviews/all-reviews");
       const data = await res.json();
       setReviews(data);
     };
